@@ -1,0 +1,11 @@
+-- HR : 사원수가 가장 많은 업무의 입사연도별 실급여기준 급여1위인 사원들을 구하시오.
+-- 실급여 : (급여 + 성과금) * 0.89
+SELECT FIRST_NAME, YY
+FROM (SELECT  FIRST_NAME, TO_CHAR(HIRE_DATE, 'YYYY') AS YY,
+              RANK() OVER(PARTITION BY TO_CHAR(HIRE_DATE, 'YYYY') ORDER BY RSAL DESC) AS RNK
+      FROM (SELECT FIRST_NAME, HIRE_DATE, (SALARY + (SALARY * COMMISSION_PCT) * 0.89) AS RSAL
+            FROM EMPLOYEES
+            WHERE JOB_ID = 'SA_REP'
+            ))
+WHERE RNK = 1
+;
