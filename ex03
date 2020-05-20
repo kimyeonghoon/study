@@ -1,0 +1,109 @@
+--------------------------------------------------------
+--  DDL for Table EX03
+--------------------------------------------------------
+
+  CREATE TABLE "ex03" 
+   (	"emp_no" VARCHAR2(10), 
+	"emp_nm" VARCHAR2(20), 
+	"dept" VARCHAR2(100), 
+	"job" VARCHAR2(30), 
+	"pay" NUMBER, 
+	"nduty_pay" NUMBER, 
+	"hol_pay" NUMBER, 
+	"etc_pay" NUMBER, 
+	"duty" NUMBER
+   ) ;
+
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1752','류하나','Flash PA팀','과장',3736759,100000,200000,NULL,298580);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2548','이선민','T기술팀','계약직',1976821,100000,NULL,NULL,141090);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7640','도주철','개발 QA','부장',4879030,100000,200000,NULL,349020);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8364','김혜경','P 기술팀','계약직',1976821,100000,200000,NULL,152580);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2070','최기림','T기술팀','대리',3483382,100000,NULL,NULL,252220);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6254','김미경','Dram PE팀','사원',2501774,70000,NULL,NULL,165710);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2910','송경화','Dram PE팀','과장',3736759,100000,NULL,NULL,238730);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0838','이혜령','개발 QA','사원',2501774,100000,NULL,NULL,179340);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP5016','이미경','E/F팀','계약직',1976821,70000,NULL,NULL,121520);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7070','엄수연','D기술팀','대리',3483382,100000,NULL,NULL,230540);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2208','심정주','영업팀','계약직',1976821,100000,NULL,NULL,146660);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP3610','박정아','영업팀','계약직',1976821,100000,NULL,90000,256520);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9020','유경미','Design Technology팀','대리',3483382,100000,400000,NULL,221700);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9180','이영주','Dram PE팀','계약직',1976821,100000,NULL,NULL,143800);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1678','이자연','eStorage개발팀','대리',3483382,100000,NULL,NULL,201620);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP3126','김은정','영업팀','과장',3736759,100000,300000,270000,457510);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7236','유은희','D기술팀','계약직',1976821,100000,NULL,NULL,130710);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6066','김태근','영업팀','과장',3736759,100000,NULL,150000,460950);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7632','김한도','개발 QA','과장',3736759,100000,300000,290000,538430);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6363','이길선','개발 QA','대리',3483382,100000,200000,NULL,411386);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8062','조창현','eStorage개발팀','과장',3736759,100000,NULL,NULL,346010);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP4747','장운용','Flash PE팀','과장',3736759,100000,NULL,NULL,243410);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0091','김다희','P 기술팀','사원',2501774,100000,NULL,150000,545768);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0488','신정민','eStorage개발팀','대리',3483382,100000,200000,NULL,276700);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP4453','김기란','T기술팀','과장',3736759,100000,NULL,NULL,248920);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7035','김우리','P 기술팀','계약직',1976821,100000,200000,NULL,157580);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8360','한정은','Design Technology팀','사원',2501774,100000,85710,NULL,166420);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP5012','김화진','T기술팀','사원',2501774,100000,NULL,90000,251870);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP5178','백승기','P 기술팀','과장',3736759,100000,200000,NULL,296920);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP4834','최경미','Dram PE팀','계약직',1976821,100000,NULL,NULL,132840);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8600','김진형','eStorage개발팀','부장',4879030,NULL,NULL,NULL,429850);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0300','이희선','eStorage개발팀','사원',2501774,100000,NULL,NULL,176120);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6528','안소현','Design Technology팀','사원',2501774,100000,200000,NULL,198590);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9224','김미선','Flash PE팀','계약직',1976821,100000,NULL,NULL,128740);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP4784','이선혜','D기술팀','사원',2501774,100000,NULL,NULL,175620);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7552','조은주','Flash PA팀','사원',2501774,100000,NULL,NULL,179340);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9245','황난희','Flash PE팀','계약직',1976821,100000,NULL,NULL,128740);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1284','고경희','영업팀','계약직',1976821,100000,NULL,NULL,145570);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8117','손현진','T기술팀','사원',2501774,100000,NULL,110000,249390);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1146','김시내','Dram PE팀','대리',3483382,100000,NULL,NULL,212540);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9302','이덕영','D기술팀','대리',3483382,100000,200000,NULL,231970);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1651','윤서진','T기술팀','과장',3736759,100000,NULL,NULL,247490);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8044','조용철','T기술팀','부장',4879030,100000,NULL,130000,429770);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0128','조문기','Dram PE팀','사원',2501774,100000,NULL,NULL,163920);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2104','송문신','D기술팀','과장',3736759,100000,NULL,NULL,231270);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6320','정경수','Design Technology팀','대리',3483382,100000,200000,NULL,215400);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2144','여형구','영업팀','대리',3483382,100000,200000,NULL,375920);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP3568','탁수진','Flash PE팀','사원',2501774,100000,NULL,NULL,166990);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP4464','민경록','E/F팀','계약직',1976821,70000,NULL,NULL,92990);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6304','김익겸','P 기술팀','부장',4879030,100000,300000,130000,537060);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9089','윤석구','eStorage개발팀','계약직',1976821,100000,NULL,NULL,119300);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8858','이윤선','T기술팀','대리',3483382,100000,NULL,NULL,362126);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2093','김성진','Flash PA팀','대리',3483382,100000,200000,NULL,278260);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8078','안재성','D기술팀','사원',2501774,100000,NULL,130000,233430);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0082','윤영상','eStorage개발팀','과장',3736759,100000,300000,90000,414740);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1268','임동균','Flash PE팀','부장',4879030,100000,NULL,NULL,292270);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP5139','정희수','Flash PA팀','사원',2501774,100000,NULL,NULL,179340);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2064','조수만','Design Technology팀','부장',4879030,100000,NULL,NULL,315050);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP2072','강은경','Dram PE팀','과장',3736759,NULL,NULL,170000,599090);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP4054','함진경','eStorage개발팀','사원',2501774,100000,NULL,NULL,176100);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7697','강규영','T기술팀','대리',3483382,100000,200000,NULL,345370);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9646','김홍원','Dram PE팀','대리',3483382,100000,200000,NULL,345010);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0201','박재득','영업팀','사원',2501774,100000,200000,NULL,309360);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1243','문영희','eStorage개발팀','계약직',1976821,100000,NULL,NULL,125670);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8291','이지연','eStorage개발팀','사원',2501774,100000,NULL,NULL,184200);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9936','차민경','P 기술팀','대리',3483382,100000,NULL,NULL,214510);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0918','한희정','Design Technology팀','과장',3736759,100000,NULL,NULL,234350);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6420','박명희','영업팀','사원',2501774,100000,NULL,NULL,215050);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP1977','이한국','Design Technology팀','사원',2501774,100000,NULL,NULL,163920);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP8360','김한수','영업팀','부장',4879030,100000,NULL,NULL,452350);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP9320','윤희원','D기술팀','대리',3483382,100000,NULL,NULL,214510);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP5105','장이태','Flash PA팀','부장',4879030,100000,200000,NULL,432420);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP3012','김은숙','Flash PA팀','계약직',1976821,100000,NULL,NULL,137850);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP3237','조성희','Flash PE팀','계약직',1976821,100000,NULL,NULL,128740);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP6036','김경배','Dram PE팀','부장',4879030,100000,300000,110000,474450);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP5631','김희숙','개발 QA','대리',3483382,100000,200000,NULL,278530);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0234','이진미','개발 QA','사원',2501774,100000,NULL,NULL,316726);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP0544','장윤선','Flash PE팀','대리',3483382,100000,NULL,NULL,221290);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP3268','하효정','Flash PE팀','사원',2501774,100000,NULL,NULL,166990);
+INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VALUES ('SP7776','심규정','D기술팀','부장',4879030,100000,NULL,NULL,282490);
+
+
+-- 실습여 평균 1위인 부서를 구하시오.
+-- 실급여 : 기본급여 + 비과세급여 + 휴일수당 + 공제액
+
+SELECT DEPT, ASAL, RNK
+FROM(SELECT DEPT, AVG(SAL) AS ASAL, RANK() OVER(ORDER BY AVG(SAL) DESC) AS RNK
+     FROM (SELECT EMP_NO, EMP_NM, DEPT, JOB, (PAY + NVL(NDUTY_PAY,0) + NVL(HOL_PAY,0) + NVL(ETC_PAY,0) + NVL(DUTY,0)) AS SAL
+           FROM EX03)
+     GROUP BY DEPT)
+WHERE RNK = 1
+;
+
