@@ -97,11 +97,11 @@ INSERT INTO ex03 (emp_no,emp_nm,dept,JOB,pay,nduty_pay,hol_pay,etc_pay,duty) VAL
 
 
 -- 실습여 평균 1위인 부서를 구하시오.
--- 실급여 : 기본급여 + 비과세급여 + 휴일수당 + 공제액
+-- 실급여 : 기본급여 + 비과세급여 + 휴일수당 - 공제액
 
 SELECT DEPT, ASAL, RNK
 FROM(SELECT DEPT, AVG(SAL) AS ASAL, RANK() OVER(ORDER BY AVG(SAL) DESC) AS RNK
-     FROM (SELECT EMP_NO, EMP_NM, DEPT, JOB, (PAY + NVL(NDUTY_PAY,0) + NVL(HOL_PAY,0) + NVL(ETC_PAY,0) + NVL(DUTY,0)) AS SAL
+     FROM (SELECT EMP_NO, EMP_NM, DEPT, JOB, (PAY + NVL(NDUTY_PAY,0) + NVL(HOL_PAY,0) + NVL(ETC_PAY,0) - NVL(DUTY,0)) AS SAL
            FROM EX03)
      GROUP BY DEPT)
 WHERE RNK = 1
