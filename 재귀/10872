@@ -1,0 +1,21 @@
+// https://www.acmicpc.net/problem/10872
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int V = 1;
+		
+		for(int i = 1; i <= N; i++) {
+			V *= i;
+		}
+		
+		System.out.println(V);
+		
+		
+	}		
+}
