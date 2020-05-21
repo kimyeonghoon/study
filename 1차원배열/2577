@@ -1,0 +1,48 @@
+// https://www.acmicpc.net/problem/2577
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int A = sc.nextInt();
+		int B = sc.nextInt();
+		int C = sc.nextInt();
+		int answer = A * B * C;
+		int[] list = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		
+		int temp = Integer.toString(answer).length();
+		
+		
+		for(int i = 0; i < temp; i++) {
+			String temp2 = Integer.toString(answer).substring(i, i + 1);
+			switch(temp2) {
+				case "0" : list[0]++;
+					break;
+				case "1" : list[1]++;
+					break;
+				case "2" : list[2]++;
+					break;
+				case "3" : list[3]++;
+					break;
+				case "4" : list[4]++;
+					break;
+				case "5" : list[5]++;
+					break;
+				case "6" : list[6]++;
+					break;
+				case "7" : list[7]++;
+					break;
+				case "8" : list[8]++;
+					break;
+				case "9" : list[9]++;
+					break;
+			}
+		}
+		
+		for(int i = 0; i < list.length; i++) {
+			System.out.println(list[i]);
+		}
+	}		
+}
