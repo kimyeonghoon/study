@@ -1,0 +1,44 @@
+  CREATE TABLE "SELL" 
+   (	"SELL_NO" NUMBER, 
+	"ITEM_NAME" VARCHAR2(100), 
+	"COUNT" NUMBER, 
+	"SELL_DT" DATE
+   ) ;
+
+  CREATE UNIQUE INDEX "SELL_PK" ON "SELL" ("SELL_NO") 
+  ;
+
+  ALTER TABLE "SELL" ADD CONSTRAINT "SELL_PK" PRIMARY KEY ("SELL_NO") ENABLE;
+  ALTER TABLE "SELL" MODIFY ("SELL_NO" NOT NULL ENABLE);
+
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (20,'고구마',17,to_date('19/11/30','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (19,'감자',3,to_date('19/11/30','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (18,'호박고구마',22,to_date('19/11/30','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (17,'호박',8,to_date('19/11/30','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (16,'감자',11,to_date('19/11/29','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (15,'호박',26,to_date('19/11/29','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (14,'고구마',4,to_date('19/11/29','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (13,'호박고구마',23,to_date('19/11/26','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (12,'애호박',7,to_date('19/11/26','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (11,'고구마',8,to_date('19/11/26','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (10,'감자',4,to_date('19/11/26','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (9,'호박',5,to_date('19/11/26','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (8,'고구마',10,to_date('19/11/23','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (7,'감자',8,to_date('19/11/23','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (6,'고구마',8,to_date('19/11/22','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (5,'감자',12,to_date('19/11/21','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (4,'호박고구마',3,to_date('19/11/21','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (3,'고구마',7,to_date('19/11/21','RR/MM/DD'));
+Insert into SELL (SELL_NO,ITEM_NAME,COUNT,SELL_DT) values (2,'호박',5,to_date('19/11/21','RR/MM/DD'));
+
+
+-- 데이터를 삽입하여 일자별 판매합계순위 중 1위인 일자를 구하는 쿼리를 작성하시오.
+-- 출력은 일자, 판매합계를 출력하시오.
+
+
+SELECT SELL_DT, RCOUNT
+FROM(SELECT SELL_DT, SUM(COUNT)AS RCOUNT, RANK() OVER(ORDER BY SUM(COUNT) DESC) AS RNK
+     FROM SELL
+     GROUP BY SELL_DT)
+WHERE RNK = 1
+;
