@@ -1,0 +1,33 @@
+// https://www.acmicpc.net/problem/2455
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int cnt = 0;
+		int[] current = { 0, 0, 0, 0 };
+		int down = 0;
+		int up = 0;
+		int answer = 0;
+		
+		for(int i = 0; i < current.length; i++) {
+			down = sc.nextInt();
+			up = sc.nextInt();
+			cnt -= down;
+			cnt += up;
+			if(cnt == 0) {
+				current[i] = up;
+			} else {
+				current[i] = cnt;
+			}
+		}
+		
+		for(int i = 0; i < current.length; i++) {
+			if(answer < current[i]) {
+				answer = current[i];
+			}
+		}
+		System.out.println(answer);
+	}
+}
