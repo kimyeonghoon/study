@@ -7,7 +7,7 @@ DROP TABLE "BOOK_INFO" cascade constraints;
 --  DDL for Sequence BOOK_INFO_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "BOOK_INFO_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "BOOK_INFO_SEQ"  MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  NOORDER  NOCYCLE ;
 --------------------------------------------------------
 --  DDL for Table BOOK_INFO
 --------------------------------------------------------
@@ -30,16 +30,16 @@ DROP TABLE "BOOK_INFO" cascade constraints;
 REM INSERTING into BOOK_INFO
 SET DEFINE OFF;
 --------------------------------------------------------
---  DDL for Index TABLE1_PK
+--  DDL for Index BOOK_INFO_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "TABLE1_PK" ON "BOOK_INFO" ("B_NO") 
+  CREATE UNIQUE INDEX "BOOK_INFO_PK" ON "BOOK_INFO" ("B_NO") 
   ;
 --------------------------------------------------------
 --  Constraints for Table BOOK_INFO
 --------------------------------------------------------
 
-  ALTER TABLE "BOOK_INFO" ADD CONSTRAINT "TABLE1_PK" PRIMARY KEY ("B_NO") ENABLE;
+  ALTER TABLE "BOOK_INFO" ADD CONSTRAINT "BOOK_INFO_PK" PRIMARY KEY ("B_NO") ENABLE;
   ALTER TABLE "BOOK_INFO" MODIFY ("B_INFO" NOT NULL ENABLE);
   ALTER TABLE "BOOK_INFO" MODIFY ("B_PRICE" NOT NULL ENABLE);
   ALTER TABLE "BOOK_INFO" MODIFY ("B_PUBLISH" NOT NULL ENABLE);
