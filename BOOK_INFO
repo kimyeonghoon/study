@@ -47,3 +47,35 @@ SET DEFINE OFF;
   ALTER TABLE "BOOK_INFO" MODIFY ("B_TITLE" NOT NULL ENABLE);
   ALTER TABLE "BOOK_INFO" MODIFY ("B_NO" NOT NULL ENABLE);
 
+
+
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'더 해빙 The Having','이서윤, 홍주연','수오서재',14400,'부와 행운을 만나는 출발점, Having을 알립니다')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'애쓰지 않고 편안하게','김수현','놀',13500,'『나는 나로 살기로 했다』 김수현 작가 4년 만의 신작!')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'코로나 투자 전쟁','정채진,박석중,이광수,김한진,김일구','페이지2',15120,'팟캐스트 ''경제의 신과 함께'' 출연진들이 뭉쳤다!')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'기억1','베르나르 베르베르','열린책들',14400,'최면으로 본 심층 기억, 누구도 짐작 못한 세계가 열린다')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'보통의 언어들','김이나','위즈덤하우스',11700,'작사가 김이나, 일상의 언어들에서 포착한 마음의풍경')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'당근 유치원','안녕달','창비',11700,'안녕달표 청량한 상상과 사랑스러운 유머가 돌아왔다!')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'기억 2','베르나르 베르베르','열린책들',13320,'최면으로 본 심층 기억, 누구도 짐작 못한 세계가 열린다')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'마법천자문 48','김현수, 홍거북, 김창환','아울북',14400,'AR 한자마법으로 즐기는 한자학습만화')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'맛있게 살 빠지는 고단백 저탄수화물 다이어트 레시피','미니 박지우','비에이블',15750,'맛있게 먹고 성공하는 고단백 꿀맛 다이어트 레시피')
+;
+INSERT INTO BOOK_INFO(B_NO,B_TITLE,B_AUTHOR,B_PUBLISH,B_PRICE,B_INFO)
+VALUES (BOOK_INFO_SEQ.NEXTVAL,'지리의 힘','팀 마샬','사이',15300,'지리는 어떻게 개인과 세계를 결정하는가')
+;
