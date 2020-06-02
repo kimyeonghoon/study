@@ -1,0 +1,49 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 화요일-6월-02-2020   
+--------------------------------------------------------
+DROP SEQUENCE "BOOK_INFO_SEQ";
+DROP TABLE "BOOK_INFO" cascade constraints;
+--------------------------------------------------------
+--  DDL for Sequence BOOK_INFO_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "BOOK_INFO_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999 INCREMENT BY 1 START WITH 1 NOCACHE  NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Table BOOK_INFO
+--------------------------------------------------------
+
+  CREATE TABLE "BOOK_INFO" 
+   (	"B_NO" NUMBER, 
+	"B_TITLE" VARCHAR2(400), 
+	"B_AUTHOR" VARCHAR2(100), 
+	"B_PUBLISH" VARCHAR2(100), 
+	"B_PRICE" NUMBER, 
+	"B_INFO" VARCHAR2(4000)
+   ) ;
+
+   COMMENT ON COLUMN "BOOK_INFO"."B_NO" IS '책번호';
+   COMMENT ON COLUMN "BOOK_INFO"."B_TITLE" IS '책제목';
+   COMMENT ON COLUMN "BOOK_INFO"."B_AUTHOR" IS '저자';
+   COMMENT ON COLUMN "BOOK_INFO"."B_PUBLISH" IS '출판사';
+   COMMENT ON COLUMN "BOOK_INFO"."B_PRICE" IS '판매가격';
+   COMMENT ON COLUMN "BOOK_INFO"."B_INFO" IS '책내용';
+REM INSERTING into BOOK_INFO
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index TABLE1_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "TABLE1_PK" ON "BOOK_INFO" ("B_NO") 
+  ;
+--------------------------------------------------------
+--  Constraints for Table BOOK_INFO
+--------------------------------------------------------
+
+  ALTER TABLE "BOOK_INFO" ADD CONSTRAINT "TABLE1_PK" PRIMARY KEY ("B_NO") ENABLE;
+  ALTER TABLE "BOOK_INFO" MODIFY ("B_INFO" NOT NULL ENABLE);
+  ALTER TABLE "BOOK_INFO" MODIFY ("B_PRICE" NOT NULL ENABLE);
+  ALTER TABLE "BOOK_INFO" MODIFY ("B_PUBLISH" NOT NULL ENABLE);
+  ALTER TABLE "BOOK_INFO" MODIFY ("B_AUTHOR" NOT NULL ENABLE);
+  ALTER TABLE "BOOK_INFO" MODIFY ("B_TITLE" NOT NULL ENABLE);
+  ALTER TABLE "BOOK_INFO" MODIFY ("B_NO" NOT NULL ENABLE);
+
