@@ -1,0 +1,18 @@
+localhost:8090/SampleSpring/test
+
+        / ----  resources
+           |
+	   ㄴ   test
+
+
+localhost:8090/SampleSpring/testa/123
+        / ----  resources
+           |
+	   ㄴ   testa - 123
+
+
+
+-- 현재 계정의 테이블 목록
+SELECT * FROM TABL;
+-- 테이블의 컬럼 정보
+SELECT * FROM COLS WHERE TABLE_NAME = 'B';

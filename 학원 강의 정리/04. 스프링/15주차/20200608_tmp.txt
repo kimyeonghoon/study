@@ -1,0 +1,29 @@
+Session : 사용자별 임시 저장 공간
+	  Request를 통하여 접근 가능
+	  사용자별의 기준 = IP, 브라우저, MAC Address
+
+로그인 : session에 사용자 정보를  보관.
+
+
+AOP(Aspect Oriented Programming) : 관점지향 프로그래밍. 중간에 끼어드는 프로그램
+
+
+인터셉터, AOP, ......
+
+
+
+AOP
+1. Pointcut으로 범위 설정
+2. JoinPoint로 Pointcut 대상 수행 구현
+
+
+Around(전부다)
+============================================================
+before             after            after-returning
+시작     -    수행     -    종료 -  값 리턴
+                                 ㄴ 예외
+                                     after-throwing
+============================================================
+
+주로 around를 많이 쓰고, 상황에 따라 before로 구현
+로그인 체크, 권한 체크
