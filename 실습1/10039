@@ -1,0 +1,24 @@
+// https://www.acmicpc.net/problem/10039
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] point = { 0, 0, 0, 0, 0 };
+		int avgPoint = 0;
+		
+		for(int i = 0; i < point.length; i++) {
+			point[i] = sc.nextInt();
+			if(point[i] < 40) {
+				point[i] = 40;
+			}
+		}
+		for(int i = 0; i < point.length; i++) {
+			avgPoint += point[i];
+		}
+		System.out.println(avgPoint/5);
+	}
+}
+

@@ -1,0 +1,42 @@
+// https://www.acmicpc.net/problem/5543
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] ham = new int[3];
+		int[] ju = new int[2];
+		
+		for(int i = 0; i < ham.length; i++) {
+			ham[i] = sc.nextInt();
+		}
+		for (int i = 0; i < ju.length; i++) {
+			ju[i] = sc.nextInt();
+		}
+		
+		for(int i = 0; i < ham.length - 1; i++) {
+			for(int j = i + 1; j < ham.length; j++) {
+				if(ham[i] > ham[j]) {
+					int temp = ham[i];
+					ham[i] = ham[j];
+					ham[j] = temp;
+				}
+			}
+		}
+		
+		for(int i = 0; i < ju.length - 1; i++) {
+			for(int j = i + 1; j < ju.length; j++) {
+				if(ju[i] > ju[j]) {
+					int temp = ju[i];
+					ju[i] = ju[j];
+					ju[j] = temp;
+				}
+			}
+		}
+		System.out.println(ham[0] + ju[0] - 50);
+		
+		
+	}		
+}

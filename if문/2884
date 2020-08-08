@@ -1,0 +1,35 @@
+// https://www.acmicpc.net/problem/2884
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int H = sc.nextInt();
+		int M = sc.nextInt();
+		
+		while(true) {
+			boolean endFlag = false;
+			if(H >= 0 && M >= 0 && H <= 23 && M <= 59) {
+				if(M >= 45) {
+					M -= 45;
+				} else if(M < 45 && H > 0) {
+					H -= 1;
+					M += 60 - 45;
+				} else {
+					H = 23;
+					M += 60 - 45;
+				}
+				endFlag = true;
+				System.out.println(H + " " + M);
+			} else {
+				sc.nextInt();
+				sc.nextInt();
+			}
+			if(endFlag) {
+				break;
+			}
+		}
+	}
+}
