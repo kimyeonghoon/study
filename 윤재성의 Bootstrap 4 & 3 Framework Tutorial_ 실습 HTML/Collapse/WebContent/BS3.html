@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Bootstrap 3</title>
+</head>
+<body>
+	<div class="container">
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#a1">a1 영역</button>
+		<div id="a1" class="collapse">
+			<p>동해물과 백두산이 마르고 닳도록</p>
+			<p>하느님이 보우하사 우리나라 만세</p>
+			<p>무궁화 삼천리 화려강산</p>
+			<p>대한사람 대한으로 길이보전하세</p>
+		</div>
+		<hr/>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#a2">a2 영역</button>
+		<div id="a2" class="collapse in">
+			<p>동해물과 백두산이 마르고 닳도록</p>
+			<p>하느님이 보우하사 우리나라 만세</p>
+			<p>무궁화 삼천리 화려강산</p>
+			<p>대한사람 대한으로 길이보전하세</p>
+		</div>
+		<hr/>
+		<div class="panel panel-default">
+			<div class="panel-title">
+				<a data-toggle="collapse" href="#a3">패널 접기</a>
+			</div>
+			<div id="a3" class="panel-collapse collapse in">
+				<div class="panel-body">
+					<p>동해물과 백두산이 마르고 닳도록</p>
+					<p>하느님이 보우하사 우리나라 만세</p>
+					<p>무궁화 삼천리 화려강산</p>
+					<p>대한사람 대한으로 길이보전하세</p>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a href="#a4" data-toggle="collapse">List Group 접기</a>
+				</h4>
+			</div>
+			<div id="a4" class="panel-collapse collapse in">
+				<ul class="list-group">
+					<li class="list-group-item">항목1</li>
+					<li class="list-group-item">항목2</li>
+					<li class="list-group-item">항목3</li>
+				</ul>
+			</div>
+		</div>
+		
+		<hr/>
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#a10">A10 panel</a>
+					</h4>
+				</div>
+				<div class="panel-collapse collapse in" id="a10">
+					<div class="panel-body">
+						<p>동해물과 백두산이 마르고 닳도록</p>
+						<p>하느님이 보우하사 우리나라 만세</p>
+						<p>무궁화 삼천리 화려강산</p>
+						<p>대한사람 대한으로 길이보전하세</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#a20">A20 panel</a>
+					</h4>
+				</div>
+				<div class="panel-collapse collapse" id="a20">
+					<div class="panel-body">
+						<p>동해물과 백두산이 마르고 닳도록</p>
+						<p>하느님이 보우하사 우리나라 만세</p>
+						<p>무궁화 삼천리 화려강산</p>
+						<p>대한사람 대한으로 길이보전하세</p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion" href="#a30">A30 panel</a>
+					</h4>
+				</div>
+				<div class="panel-collapse collapse" id="a30">
+					<div class="panel-body">
+						<p>동해물과 백두산이 마르고 닳도록</p>
+						<p>하느님이 보우하사 우리나라 만세</p>
+						<p>무궁화 삼천리 화려강산</p>
+						<p>대한사람 대한으로 길이보전하세</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

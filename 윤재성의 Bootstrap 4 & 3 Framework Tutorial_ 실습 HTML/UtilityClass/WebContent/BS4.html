@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>Bootstrap 4</title>
+<style type="text/css">
+	.box {
+		width: 100px;
+		height: 100px;
+		display: inline-block;
+	}
+	
+	.box2 {
+		width: 100px;
+		height: 100px;
+		margin-bottom: 5px;
+	}
+	
+	.box3 {
+		height: 30px;
+		margin-bottom: 5px;
+	}
+	
+	.box4 {
+		width: 30px;
+		display: inline-block;
+	}
+</style>
+</head>
+<body>
+	<div class="container">
+		<hr/>
+		<div class="box bg-warning"></div>
+		<div class="box bg-warning border border-danger"></div>
+		<div class="box bg-warning border border-0 border-danger"></div>
+		<div class="box bg-warning border border-top-0 border-danger"></div>
+		<div class="box bg-warning border border-right-0 border-danger"></div>
+		<div class="box bg-warning border border-bottom-0 border-danger"></div>
+		<div class="box bg-warning border border-left-0 border-danger"></div>
+		
+		<hr/>
+		<div class="box border border-primary"></div>
+		<div class="box border border-secondary"></div>
+		<div class="box border border-success"></div>
+		<div class="box border border-danger"></div>
+		<div class="box border border-warning"></div>
+		<div class="box border border-info"></div>
+		<div class="box border border-light"></div>
+		<div class="box border border-dark"></div>
+		<div class="box border border-white"></div>
+		
+		<hr/>
+		<div class="box bg-warning rounded"></div>
+		<div class="box bg-warning rounded-top"></div>
+		<div class="box bg-warning rounded-right"></div>
+		<div class="box bg-warning rounded-bottom"></div>
+		<div class="box bg-warning rounded-left"></div>
+		<div class="box bg-warning rounded-circle"></div>
+		<div class="box bg-warning rounded-0"></div>
+		
+		<hr/>
+		<div class="clearfix">
+			<div class="box bg-warning float-left"></div>
+			<div class="box bg-warning float-right"></div>
+		</div>
+		<button class="btn btn-primary">버튼</button>
+		
+		<hr/>
+		<div class="clearfix">
+			<div class="box2 bg-warning float-sm-right"></div>
+		</div>
+		<div class="clearfix">
+			<div class="box2 bg-warning float-md-right"></div>
+		</div>
+		<div class="clearfix">
+			<div class="box2 bg-warning float-lg-right"></div>
+		</div>
+		<div class="clearfix">
+			<div class="box2 bg-warning float-xl-right"></div>
+		</div>
+		<div class="clearfix">
+			<div class="box2 bg-warning float-none-right"></div>
+		</div>
+		
+		<hr/>
+		<div class="bg-secondary" style="height: 215px; padding: 5px">
+			<div class="box3 bg-warning"></div>
+			<div class="box3 bg-warning w-25"></div>
+			<div class="box3 bg-warning w-50"></div>
+			<div class="box3 bg-warning w-75"></div>
+			<div class="box3 bg-warning w-100"></div>
+			<div class="box3 bg-warning mw-100" style="width: 2000px"></div>
+		</div>
+		
+		<hr/>
+		<div class="bg-secondary" style="height: 215px; padding: 5px">
+			<div class="box4 bg-warning" style="height: 100%"></div>
+			<div class="box4 bg-warning h-25"></div>
+			<div class="box4 bg-warning h-50"></div>
+			<div class="box4 bg-warning h-75"></div>
+			<div class="box4 bg-warning h-100"></div>
+			<div class="box4 bg-warning mh-100" style="height: 2000px"></div>
+		</div>
+		
+		<hr/>
+		<div class="box border border-danger">
+			<div class="bg-warning w-100 h-100"></div>
+		</div>
+		<div class="box border border-danger p-3">
+			<div class="bg-warning w-100 h-100"></div>
+		</div>
+		<div class="box border border-danger pt-1 pr-2 pb-3 pl-4">
+			<div class="bg-warning w-100 h-100"></div>
+		</div>
+		<div class="box border border-danger px-2">
+			<div class="bg-warning w-100 h-100"></div>
+		</div>
+		<div class="box border border-danger py-2">
+			<div class="bg-warning w-100 h-100"></div>
+		</div>
+		
+		<hr/>
+		<div class="box bg-warning"></div>
+		<div class="box bg-warning m-3"></div>
+		<div class="box bg-warning"></div>
+
+		<hr/>
+		<div class="box bg-warning"></div>
+		<div class="box bg-warning mt-1 mr-2 mb-3 ml-4"></div>
+		<div class="box bg-warning"></div>
+		
+		<hr/>
+		<div class="box bg-warning"></div>
+		<div class="box bg-warning mx-2"></div>
+		<div class="box bg-warning"></div>
+		
+		<hr/>
+		<div class="box bg-warning"></div>
+		<div class="box bg-warning my-2"></div>
+		<div class="box bg-warning"></div>
+		<hr/>
+		<div class="box2 bg-warning mx-auto"></div>
+		
+		<hr/>
+		<div class="box bg-warning"></div>
+		<div class="box bg-warning shadow-none"></div>
+		<div class="box bg-warning shadow-sm"></div>
+		<div class="box bg-warning shadow"></div>
+		<div class="box bg-warning shadow-lg"></div>
+		
+		<hr/>
+		<div class="box bg-warning visible"></div>
+		<div class="box bg-warning invisible"></div>
+		
+		<hr/>
+		<span class="bg-info d-block">d-block</span>
+		<span class="bg-info d-sm-block">d-sm-block</span>
+		<span class="bg-info d-md-block">d-md-block</span>
+		<span class="bg-info d-lg-block">d-lg-block</span>
+		<span class="bg-info d-xl-block">d-xl-block</span>
+		
+		<hr/>
+		
+		
+	</div>
+</body>
+</html>

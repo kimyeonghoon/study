@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>Bootstrap 4</title>
+</head>
+<body>
+	<div class="container">
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#a1">a1 영역</button>
+		<div id="a1" class="collapse">
+			<p>동해물과 백두산이 마르고 닳도록</p>
+			<p>하느님이 보우하사 우리나라 만세</p>
+			<p>무궁화 삼천리 화려강산</p>
+			<p>대한사람 대한으로 길이보전하세</p>
+		</div>
+		<hr/>
+		<button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#a2">a2 영역</button>
+		<div id="a2" class="collapse show">
+			<p>동해물과 백두산이 마르고 닳도록</p>
+			<p>하느님이 보우하사 우리나라 만세</p>
+			<p>무궁화 삼천리 화려강산</p>
+			<p>대한사람 대한으로 길이보전하세</p>
+		</div>
+		<hr/>
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#a3">card 접기</a>
+			</div>
+			<div class="collapse show" id="a3">
+				<p>동해물과 백두산이 마르고 닳도록</p>
+				<p>하느님이 보우하사 우리나라 만세</p>
+				<p>무궁화 삼천리 화려강산</p>
+				<p>대한사람 대한으로 길이보전하세</p>
+			</div>
+		</div>
+		<hr/>
+		<div class="card">
+			<div class="card-header">
+				<a class="card-link" data-toggle="collapse" href="#a4">list group 접기</a>
+			</div>
+			<div class="collapse show" id="a4">
+				<ul class="list-group">
+					<li class="list-group-item">항목1</li>
+					<li class="list-group-item">항목2</li>
+					<li class="list-group-item">항목3</li>
+				</ul>
+			</div>
+		</div>
+		
+		<hr/>
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header">
+					<a class="card-link" data-toggle="collapse" href="#a10">A10 Card</a>
+				</div>
+				<div class="collapse show" id="a10" data-parent="#accordion">
+					<div class="card-body">
+						<p>동해물과 백두산이 마르고 닳도록</p>
+						<p>하느님이 보우하사 우리나라 만세</p>
+						<p>무궁화 삼천리 화려강산</p>
+						<p>대한사람 대한으로 길이보전하세</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="card-link" data-toggle="collapse" href="#a20">A20 Card</a>
+				</div>
+				<div class="collapse" id="a20" data-parent="#accordion">
+					<div class="card-body">
+						<p>동해물과 백두산이 마르고 닳도록</p>
+						<p>하느님이 보우하사 우리나라 만세</p>
+						<p>무궁화 삼천리 화려강산</p>
+						<p>대한사람 대한으로 길이보전하세</p>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<a class="card-link" data-toggle="collapse" href="#a30">A30 Card</a>
+				</div>
+				<div class="collapse" id="a30" data-parent="#accordion">
+					<div class="card-body">
+						<p>동해물과 백두산이 마르고 닳도록</p>
+						<p>하느님이 보우하사 우리나라 만세</p>
+						<p>무궁화 삼천리 화려강산</p>
+						<p>대한사람 대한으로 길이보전하세</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

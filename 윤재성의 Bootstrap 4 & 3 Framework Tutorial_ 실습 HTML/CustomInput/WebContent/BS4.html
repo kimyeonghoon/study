@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<title>Bootstrap 4</title>
+</head>
+<body>
+	<div class="container" style="margin-top: 50px">
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<div class="card shadow">
+					<div class="card-body">
+						<form action="#" method="post">
+							<div class="form-group row">
+								<label class="col-sm-4 text-sm-right">checkbox</label>
+								<div class="com-sm-8">
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" name="c1" value="1" />체크박스 1
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" name="c1" value="2" />체크박스 2
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="checkbox" class="form-check-input" name="c1" value="3" />체크박스 3
+										</label>
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label class="col-sm-4 text-sm-right">Custom checkbox</label>
+								<div class="col-sm-8">
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" name="c2" id="c10" value="1" />
+										<label class="custom-control-label" for="c10">커스텀 체크박스1</label>
+									</div>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" name="c2" id="c20" value="2" />
+										<label class="custom-control-label" for="c20">커스텀 체크박스2</label>
+									</div>
+									<div class="custom-control custom-checkbox">
+										<input type="checkbox" class="custom-control-input" name="c2" id="c30" value="3" />
+										<label class="custom-control-label" for="c30">커스텀 체크박스3</label>
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label class="col-sm-4 text-sm-right">Radio</label>
+								<div class="col-sm-8">
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="r1" value="1" checked="checked" />라디오 1
+										</label>
+									</div>
+									<div class="form-check">	
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="r1" value="2" />라디오 2
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input type="radio" class="form-check-input" name="r1" value="3" />라디오 3
+										</label>
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label class="col-sm-4 text-sm-right">Custom Radio</label>
+								<div class="col-sm-8">
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input" name="r2" id="r10" value="1" checked="checked" />
+										<label for="r10" class="custom-control-label">커스텀 라디오1</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input" name="r2" id="r20" value="2" />
+										<label for="r20" class="custom-control-label">커스텀 라디오2</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input" name="r2" id="r30" value="3" />
+										<label for="r30" class="custom-control-label">커스텀 라디오3</label>
+									</div>
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label for="a1" class="col-sm-4 text-sm-right">select</label>
+								<div class="col-sm-8">
+									<select class="form-control" id="a1">
+										<option value="1">항목1</option>
+										<option value="2">항목2</option>
+										<option value="3">항목3</option>
+										<option value="4">항목4</option>
+										<option value="5">항목5</option>
+									</select>
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label for="a2" class="col-sm-4 text-sm-right">select Custom</label>
+								<div class="col-sm-8">
+									<select class="custom-select" id="a2">
+										<option value="1">항목1</option>
+										<option value="2">항목2</option>
+										<option value="3">항목3</option>
+										<option value="4">항목4</option>
+										<option value="5">항목5</option>
+									</select>
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label for="a3" class="col-sm-4 text-sm-right">range</label>
+								<div class="col-sm-8">
+									<input type="range" class="form-control" id="a3">
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label for="a4" class="col-sm-4 text-sm-right">range custom</label>
+								<div class="col-sm-8">
+									<input type="range" class="custom-range" id="a4">
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label for="a5" class="col-sm-4 text-sm-right">file</label>
+								<div class="col-sm-8">
+									<input type="file" class="form-control" id="a5" />
+								</div>
+							</div>
+							<hr/>
+							<div class="form-group row">
+								<label for="a6" class="col-sm-4 text-sm-right">file Custom</label>
+								<div class="col-sm-8">
+									<input type="file" class="custom-file-input" id="a6" />
+									<label class="custom-file-label">파일 선택</label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	</div>
+</body>
+</html>

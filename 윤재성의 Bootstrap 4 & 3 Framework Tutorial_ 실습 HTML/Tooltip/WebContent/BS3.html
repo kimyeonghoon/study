@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Bootstrap 3</title>
+<script type="text/javascript">
+$(function() {
+	$("#a1, #a2, #a3, #a4, #a5").tooltip();
+});
+
+</script>
+</head>
+<body>
+	<div class="container">
+		<a href="#" title="툴팁 예쩨" data-toggle="tooltip" id="a1">링크</a>
+		<hr/>
+		<div class="text-center">
+			<a href="#" title="좌측" data-toggle="tooltip" data-placement="left" id="a2">좌측</a><br/>
+			<a href="#" title="우측" data-toggle="tooltip" data-placement="right" id="a3">우측</a><br/>
+			<a href="#" title="위" data-toggle="tooltip" data-placement="top" id="a4">위</a><br/>
+			<a href="#" title="아래" data-toggle="tooltip" data-placement="bottom" id="a5">아래</a>
+		</div>
+	</div>
+</body>
+</html>
