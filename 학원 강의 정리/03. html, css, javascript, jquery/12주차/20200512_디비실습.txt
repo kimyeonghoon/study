@@ -1,0 +1,2 @@
+-- 부서별 부하직원이 가장많은 사원의 정보와 부서명, 업무를 구하시오.
+-- 출력 : FIRST_NAME, SALARY, DEPARTMENT_NAME, JOB_TITLE, 부하직원 수
