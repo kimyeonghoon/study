@@ -1,0 +1,15 @@
+-- 부서별 부하직원이 가장많은 사원의 정보와 부서명, 업무를 구하시오.
+-- 출력 : FIRST_NAME, SALARY, DEPARTMENT_NAME, JOB_TITLE, 부하직원 수
+SELECT FIRST_NAME, SALARY, DEPARTMENT_NAME, JOB_TITLE, CNT
+FROM (SELECT E.FIRST_NAME, E.SALARY, D.DEPARTMENT_NAME, J.JOB_TITLE, E.EMPLOYEE_ID, C.CNT,
+               RANK() OVER(PARTITION  BY D.DEPARTMENT_NAME ORDER BY C.CNT DESC) AS RNK
+      FROM EMPLOYEES E INNER JOIN DEPARTMENTS D
+                               ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+                       INNER JOIN JOBS J
+                               ON E.JOB_ID = J.JOB_ID
+                       INNER JOIN (SELECT MANAGER_ID, COUNT(*) AS CNT
+                                   FROM EMPLOYEES
+                                   GROUP BY MANAGER_ID) C
+                               ON E.EMPLOYEE_ID = C.MANAGER_ID)
+WHERE RNK = 1
+;

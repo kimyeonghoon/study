@@ -1,0 +1,58 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 월요일-6월-08-2020   
+--------------------------------------------------------
+DROP SEQUENCE "BM_SEQ";
+DROP TABLE "BM" cascade constraints;
+--------------------------------------------------------
+--  DDL for Sequence BM_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "BM_SEQ"  MINVALUE 1 MAXVALUE 999999999999999999999999999 INCREMENT BY 1 START WITH 7 NOCACHE  NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+--------------------------------------------------------
+--  DDL for Table BM
+--------------------------------------------------------
+
+  CREATE TABLE "BM" 
+   (	"BM_NO" NUMBER, 
+	"BM_ID" VARCHAR2(100), 
+	"BM_PW" VARCHAR2(200), 
+	"BM_NM" VARCHAR2(100)
+   ) ;
+
+   COMMENT ON COLUMN "BM"."BM_NO" IS '회원번호';
+   COMMENT ON COLUMN "BM"."BM_ID" IS '아이디';
+   COMMENT ON COLUMN "BM"."BM_PW" IS '비밀번호';
+   COMMENT ON COLUMN "BM"."BM_NM" IS '이름';
+REM INSERTING into BM
+SET DEFINE OFF;
+Insert into BM (BM_NO,BM_ID,BM_PW,BM_NM) values (1,'abcd','1234','가나다');
+Insert into BM (BM_NO,BM_ID,BM_PW,BM_NM) values (2,'gogogogo','1111','가나다');
+Insert into BM (BM_NO,BM_ID,BM_PW,BM_NM) values (3,'gogogogogo','4567','가나다');
+Insert into BM (BM_NO,BM_ID,BM_PW,BM_NM) values (4,'abcdefg','1234','마바사');
+Insert into BM (BM_NO,BM_ID,BM_PW,BM_NM) values (5,'abcdefghi','1111','abc');
+Insert into BM (BM_NO,BM_ID,BM_PW,BM_NM) values (6,'llll','1234','abc');
+--------------------------------------------------------
+--  DDL for Index BM_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "BM_PK" ON "BM" ("BM_NO") 
+  ;
+--------------------------------------------------------
+--  DDL for Index BM_UK1
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "BM_UK1" ON "BM" ("BM_ID") 
+  ;
+--------------------------------------------------------
+--  Constraints for Table BM
+--------------------------------------------------------
+
+  ALTER TABLE "BM" MODIFY ("BM_NO" NOT NULL ENABLE);
+  ALTER TABLE "BM" MODIFY ("BM_ID" NOT NULL ENABLE);
+  ALTER TABLE "BM" MODIFY ("BM_PW" NOT NULL ENABLE);
+  ALTER TABLE "BM" MODIFY ("BM_NM" NOT NULL ENABLE);
+  ALTER TABLE "BM" ADD CONSTRAINT "BM_PK" PRIMARY KEY ("BM_NO")
+  USING INDEX  ENABLE;
+  ALTER TABLE "BM" ADD CONSTRAINT "BM_UK1" UNIQUE ("BM_ID")
+  USING INDEX  ENABLE;
+
