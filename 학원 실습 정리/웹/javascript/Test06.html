@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var s = function() {
+	console.log("s!!!!");
+};
+function a() {
+	s.call(); // 변수에 담긴 함수를 실행하겠다.
+	var btn = document.getElementById("btn");
+	btn.onclick = function() {
+		alert("Hi~!");
+	};
+}
+/* 
+   onload - 브라우저 화면에 해당 객체가 그려진 후에 실행  
+   onresize - 크기가 변경되었을 때
+   -------------------------------------
+   onfocus - 해당 영역이 활성화되었을 때
+   onblur - 해당 영역에서 밖으로 나간 상태가 되었을 때
+ */
+ 
+ // window.onload - 브라우저에 객체 로딩이 완료된 시점
+ window.onload = function() {
+	var btn = document.getElementById("btn");
+	btn.onclick = function() {
+		alert("Hello~!");
+	};
+};
+</script>
+</head>
+<body>
+<input type="button" value="버튼" onclick="a();" />
+<input id="btn" type="button" value="버튼2" />
+</body>
+</html>

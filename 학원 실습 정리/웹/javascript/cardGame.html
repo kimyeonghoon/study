@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+var card = new Array(16);
+var cardImg = ["doog", "dooog"];
+var first = null;
+var second = null;
+$(document).ready(function(){
+var imgCnt = [0, 0];
+for(var i = 0 ; i < 16 ; i++) {
+card[i] = Math.floor(Math.random() * 2);
+
+    imgCnt[card[i]]++;
+}
+
+
+$(".pad").on("click", "div > div", function() {
+    cardOpen($(this).attr("name"));
+});
+});
+
+function cardOpen(pos) {
+$(".pad [name='" + pos + "']").attr("class", cardImg[card[pos]]);
+}
+
+</script>
+<style type="text/css">
+body, html {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrap {
+	display: inline-block;
+	background-color: black;
+	position: absolute;
+	width: 1000px;
+	height: 600px;
+}
+
+.startImg {
+	display: inline-block;
+	text-align : center;
+	width : 300px;
+	height: 400px;
+	background-color: white;
+	position: absolute;
+	top: 30px;
+	left: calc(50% - 150px);
+}
+
+.start {
+	display: inline-block;
+	width : 200px;
+	height: 50px;
+	background-color: white;
+	position: absolute;
+	top: 450px;
+	left: calc(50% - 100px);
+	font-size: 16px;
+}
+.upWrap {
+	display: none;
+	width: 900px;
+	height: 50px;
+	position: absolute;
+	top: 20px;
+	left: 45px;
+	text-align: center;
+}
+.timer, .pause {
+	display: inline-block;
+	border: solid 2px #FFFFFF;
+	width: 443px;
+	height: 100%;
+	font: 16px;
+	color: white;
+}
+.cardWrap {
+	display: none;
+	text-align: center;
+	width: 896px;
+	height: 450px;
+	border: solid 2px #FFFFFF;
+	position: absolute;
+	top: 90px;
+	left: 45px;
+	font-size : 16px;
+	color: white;
+}
+.cardList {
+	height: 90%;
+	display: inline-block;
+	top: 90px;
+}
+
+.pauseWrap {
+	display: none;
+	text-align : center;
+	width : 300px;
+	height: 320px;
+	background-color: white;
+	position: absolute;
+	top: 100px;
+	left: calc(50% - 150px);
+}
+.endGame, .retryGame, .continueGame {
+	display: inline-block;
+	width : 80%;
+	height: 80px;
+	background-color: gray;
+	border: solid 2px #000000;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+}
+table {
+	border-collapse: collapse;
+	margin: 15px;
+}
+tr {
+	border: solid 2px #FFFFFF;
+}
+td {
+	height: 100px;
+	border: solid 2px #FFFFFF;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="startImg">이미지영역</div>
+	<div class="start">시작</div>
+	<div class="upWrap">
+		<div class="timer">제한 시간</div>
+		<div class="pause">일시 정지</div>
+	</div>
+	<div class="pauseWrap">
+		<div class="endGame">종료하기</div>
+		<div class="retryGame">다시하기</div>
+		<div class="continueGame">이어하기</div>
+	</div>
+	<div class="cardWrap">
+		<table class="cardList">
+		<colgroup width="200px">
+			<col></col>
+			<col></col>
+			<col></col>
+			<col></col>
+		</colgroup>
+		<tbody>
+			<tr class="line1">
+				<td id="card1"><img alt="1번카드" src="./img/1.png" width="70px" height="100px"></td>
+				<td id="card2"><img alt="2번카드" src="./img/2.png" width="70px" height="100px"></td>
+				<td id="card3"><img alt="3번카드" src="./img/3.png" width="70px" height="100px"></td>
+				<td id="card4"><img alt="4번카드" src="./img/4.png" width="70px" height="100px"></td>
+			</tr>
+			<tr class="line2">
+				<td id="card5"><img alt="5번카드" src="./img/5.png" width="70px" height="100px"></td>
+				<td id="card6"><img alt="6번카드" src="./img/6.png" width="70px" height="100px"></td>
+				<td id="card7"><img alt="7번카드" src="./img/7.png" width="70px" height="100px"></td>
+				<td id="card8"><img alt="8번카드" src="./img/8.png" width="70px" height="100px"></td>
+			</tr>
+			<tr class="line3">
+				<td id="card9"><img alt="9번카드" src="./img/9.png" width="70px" height="100px"></td>
+				<td id="card10"><img alt="10번카드" src="./img/10.png" width="70px" height="100px"></td>
+				<td id="card11"><img alt="11번카드" src="./img/11.png" width="70px" height="100px"></td>
+				<td id="card12"><img alt="12번카드" src="./img/12.png" width="70px" height="100px"></td>
+			</tr>
+			<tr class="line4">
+				<td id="card13"><img alt="13번카드" src="./img/13.png" width="70px" height="100px"></td>
+				<td id="card14"><img alt="14번카드" src="./img/14.png" width="70px" height="100px"></td>
+				<td id="card15"><img alt="15번카드" src="./img/15.png" width="70px" height="100px"></td>
+				<td id="card16"><img alt="16번카드" src="./img/16.png" width="70px" height="100px"></td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

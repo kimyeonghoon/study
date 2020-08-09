@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function changeImg(file) {
+	var cat = document.getElementById("cat");
+	
+	cat.src = file;
+}
+</script>
+
+</head>
+<body>
+<!-- 마우스 동작(up, down - 클릭 / over,out - 마우스 위치) -->
+<img id="cat" alt="고양이" src="./cat1.png" 
+onmousedown="changeImg('./cat2.png');" 
+onmouseup="changeImg('./cat1.png');"
+onmouseover="changeImg('./cat3.png');"
+onmouseout="changeImg('./cat1.png');"
+/>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var resultVal = 0;
+var inputVal = 0;
+var signVal = null;
+var tempVal = null;
+var signValTemp = null;
+
+
+function num(obj) {
+	var txt = document.getElementById("txt");
+	if(txt.value == 0) {
+		txt.value = obj.value;
+	} else {
+		txt.value += obj.value;
+	}
+}
+
+
+function sign(obj) {
+	if(tempVal != null) {
+		tempVal = null;
+	}
+	if(signValTemp != null) {
+		signValTemp = null;
+	}
+	
+	var txt = document.getElementById("txt");
+	var curr = document.getElementById("curr");
+	var sign = document.getElementById("sign");
+
+	if(signVal == null) { 
+		inputVal = txt.value;
+		resultVal = inputVal;
+		curr.value = resultVal;
+		signVal = obj.value;
+		txt.value = null;
+		
+	} else {
+		result();
+		signVal = obj.value;
+		txt.value = null;
+	}
+}
+
+function clearVal() {
+	inputVal = 0;
+	txt.value = null;
+	curr.value = null;
+	tempVal = 0;
+	signVal = null;
+	signValTemp = null;
+}
+
+function result() {
+	if(signValTemp != null) {
+		if(signValTemp == "+") {
+			resultVal = parseInt(resultVal) + inputVal;
+			txt.value = resultVal;
+			curr.value = resultVal;
+			signVal = null;
+		} else if(signValTemp == "-") {
+			resultVal = parseInt(resultVal) - inputVal;
+			txt.value = resultVal;
+			curr.value = resultVal;
+			signVal = null;
+		} else if(signValTemp == "*") {
+			resultVal = parseInt(resultVal) * inputVal;
+			txt.value = resultVal;
+			curr.value = resultVal;
+			signVal = null;
+		} else if(signValTemp == "/") {
+			resultVal = parseInt(resultVal) / inputVal;
+			txt.value = resultVal;
+			curr.value = resultVal;
+			signVal = null;
+		} 
+	} else if(signVal == "+") {
+		tempVal = parseInt(txt.value);
+		inputVal = parseInt(txt.value);
+		resultVal = parseInt(resultVal) + inputVal;
+		txt.value = resultVal;
+		curr.value = resultVal;
+		signValTemp = signVal;
+		signVal = null;
+	} else if(signVal == "-") {
+		tempVal = parseInt(txt.value);
+		inputVal = parseInt(txt.value);
+		resultVal = resultVal - inputVal;
+		txt.value = resultVal;
+		curr.value = resultVal;
+		signValTemp = signVal;
+		signVal = null;
+	} else if(signVal == "*") {
+		tempVal = parseInt(txt.value);
+		inputVal = parseInt(txt.value);
+		resultVal = resultVal * inputVal;
+		txt.value = resultVal;
+		curr.value = resultVal;
+		signValTemp = signVal;
+		signVal = null;
+	} else if(signVal == "/") {
+		tempVal = parseInt(txt.value);
+		inputVal = parseInt(txt.value);
+		resultVal = resultVal / inputVal;
+		txt.value = resultVal;
+		curr.value = resultVal;
+		signValTemp = signVal;
+		signVal = null;
+	}
+}
+</script>
+<style type="text/css">
+.table {
+	background-color: #FFEA94;
+	text-align: center;
+	border: 1px solid #E8A87B;
+	box-shadow: 3px 3px 3px grey;
+}
+.display {
+	height: 30px;
+}
+.button {
+	background-color: #EEEEEE;
+	border: 1px soild #DDDDDD;
+	width: 40px;
+	height: 40px;
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+<table class="table">
+	<tbody>
+		<tr>
+			<td colspan="4"><input type="text" class="display" id="curr" disabled="disabled" readonly="readonly" /></td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="text" class="display" id="txt" readonly="readonly" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="button" value="7" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="8" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="9" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="+" onclick="sign(this)" /></td>
+		</tr>
+			<tr>
+			<td><input type="button" class="button" value="4" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="5" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="6" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="-" onclick="sign(this)" /></td>
+		</tr>
+			<tr>
+			<td><input type="button" class="button" value="1" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="2" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="3" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="*" onclick="sign(this)" /></td>
+		</tr>
+			<tr>
+			<td><input type="button" class="button" value="0" onclick="num(this)" /></td>
+			<td><input type="button" class="button" value="c" onclick="clearCal()" /></td>
+			<td><input type="button" class="button" value="=" onclick="result(this)" /></td>
+			<td><input type="button" class="button" value="/" onclick="sign(this)" /></td>
+		</tr>
+	</tbody>
+</table>
+	
+
+</body>
+</html>

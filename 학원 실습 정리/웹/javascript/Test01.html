@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 자바 : 컴퓨터에서 동작
+	  자바스크립트 : 브라우저에서 동작  -->
+<script type="text/javascript">
+/* alert - 경고창(팝업창X). 텍스트만 들어감. */
+/* 조건없이 실행할 경우 바로 실행 */
+alert("Hello!!");
+/* console.log  - 출력(System.out.print와 동일) */
+console.log("Hi~!");
+/* var - Javascript의 기본자료형. 지역변수이자 전역변수의 기능을 다 가지고 있음. 신경을 써줘야할 것이 많음.*/
+/* const - ES6에서 등장. 상수용. 값 변경 불가. 생존범위는 {} 안쪽 */
+/* let - ES6에서 등장. 지역변수. 값 변경 가능. 생존범위는 {} 안쪽 */
+var a = 1;
+a++;
+console.log(a);
+/* 조건문 */
+if(a % 2 == 0) {
+	console.log("짝수");
+} else {
+	console.log("홀수");
+}
+/* 반복문 */
+for(var i = 0 ; i < 10 ; i++) {
+	console.log(i);
+}
+var s = "123A";
+/* 문자열 -> 숫자열 : *1을 하면 됨(곱연산이 바로 됨) */
+/* isNaN : true, false 확인 */
+console.log(s * 1 + 1);
+/* NaN : 연산이 불가능할 경우 뜸. 숫자 계산  X */
+console.log(isNaN(s * 1));
+/* 구구단 2~9단 출력 */
+for(var i = 2; i < 10; i++) {
+	console.log("[" + i + "단]");
+	for(var j = 1; j < 10; j++) {
+		console.log(i + "x" + j + "=" + i * j);
+	}
+	console.log("");
+}
+
+/* function 사용법(자바의 메소드와 형태 유사)
+ function 함수명(인자명, ...){
+	내용
+	*만약 반환할 값이 있으면 return 값;
+} */
+/* function test() {
+	alert("눌렀다!");
+} */
+
+/* object : 화면 객체 */
+/* document : html 문서.
+   Element : 요소(태그) */
+function test() {
+	/* 아래 내용을 제거해도 정상작동함 */
+	/* var txt = document.getElementById("txt"); */
+	/* txt라는 id를 가진 것을 자동으로 인식. 권장사항은 아님. 
+	       명시적으로 표현하는 것을 권장. 동일 id가 있을 경우 첫 번째 것만 인식(id 중복을 권장하지 않는 이유) */
+	txt.value = "잘 들어갔나?";
+	/* document.getElementById("txt").txt.value = "잘 들어갔나?"; */
+	/* 속성에 다이렉트로 접근이 가능함  */
+	console.log(txt.id);
+}
+
+</script>
+</head>
+<body>
+<input type="text" id="txt" />
+<!-- on(이벤트를 발생시키는 시점) -->
+<!-- onclick(클릭했을 때) -->
+<input type="button" value="버튼" onclick="test();" />
+</body>
+</html>

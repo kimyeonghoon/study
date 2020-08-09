@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+body{
+	font-size: 0px;
+	/* 브라우저 기본 마진(크롬 기준 8px) 없애기 */
+	margin: 0px;
+}
+.a, .b {
+	display: inline-block;
+	color: white;
+	/* 현재 가로 302px. 크기 계산할 때 테두리까지 같이 생각해서 만들어야함. 300 -> 298 */
+	width: 298px;
+	/* 가변형으로 구성할 경우(% 이용) max와 min을 신경써야 함. 특히 min */
+	max-width: 300px;
+	min-width: 150px;
+	height: 150px;
+	font-size: 16pt;
+	/* inline-block : 마지막 줄에 맞춰서 정렬됨. vertical-align을 이용하여 해결 가능 */
+	vertical-align: top;
+	border: 1px solid black;
+	
+	
+}
+.a {
+	background-color: purple;
+	/* margin : 바깥여백 (4개 - 시계방향, 3개, 2개, 1개}. - */
+	/* padding : 안쪽여백 (4개 - 시계방향, 3개, 2개, 1개}. - */
+	margin-right: 10px;
+	padding: 10px;
+}
+.b {
+	background-color: navy;
+}
+.wrap {
+	width:600px;
+	border: 3px solid red;
+	/* 좌우 여백 x(가운데) */
+	margin: 0px auto;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="a">a<br/>a</div>
+	<div class="b">b</div>
+</div>
+</body>
+</html>

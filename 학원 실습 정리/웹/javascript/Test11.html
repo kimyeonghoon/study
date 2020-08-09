@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+}
+
+/* 
+	: nth-child(값) : 값번째
+	값 -> 숫자 : 숫자번쨰
+	값 -> 숫자n : 숫자배수번쨰 ex) 짝수 : 2n, 홀수 : 2n - 1
+ */
+tbody tr:nth-child(2n - 1){
+	background-color: red;
+}
+
+.box1, .box2 {
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	height: 100px;
+}
+
+.box1 {
+	background-color: red;
+}
+
+.box2 {
+	background-color: blue;
+}
+</style>
+
+<!-- 객체접근/취득
+-javascript
+	document.getElementBy~~(  );
+			   Id, Class, Name
+-jQuery
+	$(셀렉터)
+ -->
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+//문서가 준비되면 함수 실행하겠다는 의미 - window.onload와 동일
+$(document).ready(function() {
+	// document.getElementById("btn") = $("#btn")
+	$("#btn").on("click", function() {
+		//취득, 할당
+		alert($(".txt").val());
+		$(".txt").val("버튼누름");
+	});
+	/* 위와 동일하지만, 다양한 처리를 위해서 on을 쓰는 것을 권장
+	$("#btn").click(function() {
+		alert("눌렀다!!");
+	}); */
+	
+	$("tbody").on("click", "tr", function() {
+		// 객체.is(셀렉터) -> 해당 객체가 셀렉터와 일치하는지 확인하여 일치하면 true, 아니면 false를 돌려준다.
+		if($(this).is(":nth-child(2n)")) {
+			alert("짝수번째 눌렀음");
+		} else {
+		//취득, 할당
+			alert($(this).attr("name"));
+			$(this).attr("name", "이미눌렀다.");
+		}
+		
+	});
+	/*
+	  $(셀렉터).on(행위, 함수); -> 셀렉터에 해당하는 객체가 행위이벤트 발생 시 함수를 실행한다.
+			click, dblclick, ....
+	   $(셀렉터1).on(행위, 셀렉터2, 함수); -> 셀렉터1에서 행위이벤트 발생 시 그 대상이 셀렉터2인 경우 함수를 실행한다
+	     셀1(이벤트 주체 : 이벤트 연결)  셀2(이벤트 대상 : 행위 발생 내용)
+	    **셀렉터2는 셀렉터 1의 하위요소
+		$(this) : 이벤트 발생 객체(위에서는 "tr"을 나타냄)
+	*/
+	
+	
+	/* 
+	jQuery 공용규칙
+ 	: 파라메터의 개수가 기본일 경우 취득, +1일 경우 할당의 형태
+	$(셀렉터).attr(속성명); -> 속성명에 해당하는 속성의 값을 취득
+	$(셀렉터).attr(속성명, 값); -> 속성명에 해당하는 속성에 값을 할당
+	*/
+	
+	$(".box1, .box2").on("click", function() {
+		if($(this).attr("class") == "box1") {
+			$(this).attr("class", "box2");
+			// $(셀렉터).width() : 가로사이즈 취득
+			// $(셀렉터).width(값) : 가로사이즈 할당
+			$(this).width($(this).width() * 2);
+			$(this).height($(this).height() * 2);
+			$(this).css("border", "5px solid #444444");
+		} else {
+			$(this).attr("class", "box1");
+			$(this).width($(this).width() * 0.5);
+			$(this).height($(this).height() * 0.5);
+			$(this).css("border", "");
+		}
+	}); // .box1, box2 onclick end
+	
+	
+	$("#btn2").on("click", function() {
+		if($(".box1, .box2").css("display") == "none"){
+			//$(".box1, .box2").show();
+			/* 
+			fadeIn() : 기본
+			fadeIn(속도) : 속도만큼 재생
+			      fast, slow
+			      0 ~ 숫자 : 밀리초 ex) 3000 -> 3초간 애니메이션
+			fadeIn(속도, 함수) : 속도만큼 재생 후 함수 실행
+			*/
+			$(".box1, .box2").fadeIn(3000);
+		} else {
+			//$(".box1, .box2").hide();
+			/* 
+			fadeOut() : 기본
+			fadeOut(속도) : 속도만큼 재생
+			      fast, slow
+			      0 ~ 숫자 : 밀리초 ex) 3000 -> 3초간 애니메이션
+			fadeOut(속도, 함수) : 속도만큼 재생 후 함수 실행
+			*/
+			$(".box1, .box2").fadeOut(100);
+		}
+	}); // #btn2 : onclick end
+	
+	
+	/* 
+	$(~~~).animate(설정, 시간, 함수) : 현재 상태에서 설정한만큼 시간동안 변화한다.
+				   변화 종료 후 함수를 실행한다.
+				   (함수는 선택사항)
+	*/
+	$("#btn3").on("click", function() {
+		$(".box1, .box2").animate({
+			/* width : "500px",
+			height : "700px" */
+			width : "+=50px",
+			height : "+=70px"
+		}, 3000);
+	});
+	
+	
+}); // document ready end
+</script>
+</head>
+<body>
+<input type="text" class="txt "/>
+<input type="button" value="버튼" id="btn" />
+<input type="button" value="버튼2" id="btn2" />
+<input type="button" value="버튼3" id="btn3" />
+<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr name="1">
+			<td>1</td>
+			<td>Test1</td>
+		</tr>
+		<tr name="2">
+			<td>2</td>
+			<td>Test2</td>
+		</tr>
+		<tr name="3">
+			<td>3</td>
+			<td>Test3</td>
+		</tr>
+	</tbody>
+</table>
+<div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+var idx = 1;
+function tbAdd() {
+	var html = "";
+	idx++;
+	// \ : 뒤에오는 특수문자를 일반문자로 인식
+	html += "<tr id=\"tr" + idx + "\">";
+	html += "<td>" + idx + "</td>		";
+	html += "<td>Test" + idx + "</td> ";
+	html += "</tr>			";
+	
+	var tb = document.getElementById("tb");
+	
+	// innerHTML : 엔티티 추가(내용 늘어남 - 기존 내용 뒤에 추가)
+	tb.innerHTML += html;
+}
+
+function tbDel() {
+	if(idx > 0) {
+		var obj = document.getElementById("tr" + idx);
+		// ie 미동작 : obj.remove(); 
+		var tb = document.getElementById("tb");
+		// removeChile(객체) : 자식 객체 중에 해당 객체와 동일한 것을 제거
+		tb.removeChild(obj);
+		
+		// obj.parentNode.removeChild(obj); 도 가능하나 권장사항은 아님
+		
+		idx--;
+	}
+}
+
+function go() {
+	// location.href : 이동
+	location.href = "Test10.html";
+}
+
+</script>
+</head>
+<body>
+<input type="button" value="add" onclick="tbAdd();" />
+<input type="button" value="del" onclick="tbDel();" />
+<input type="button" value="go" onclick="go();" />
+<br />
+<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>내용</th>
+		</tr>
+	</thead>
+	<tbody id="tb">
+		<tr id="tr1">
+			<td>1</td>
+			<td>Test1</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

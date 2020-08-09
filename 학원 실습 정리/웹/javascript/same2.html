@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./css/same01.css" />
+<style type="text/css">
+.cat1, .cat2, .cat3, .cat4, .cat5, .cat6, .cat7, .cat8 {
+	display: inline-block;
+	width: 140px; height: 220px;
+	background-size: 140px 220px; background-repeat: no-repeat;	
+}
+.cat1 {	background-image: url('cat1.jpg'); }
+.cat2 {	background-image: url('cat2.png'); }
+.cat3 {	background-image: url('cat3.png'); }
+.cat4 {	background-image: url('cat4.png'); }
+.cat5 {	background-image: url('cat5.png'); }
+.cat6 {	background-image: url('cat6.jpg'); }
+.cat7 {	background-image: url('cat7.jpg'); }
+.cat8 {	background-image: url('cat8.png'); }
+</style>
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(".time").hide();
+	$(".pause").hide();
+	var tempc = null; //클래스명
+	var tempn = null; //네임
+	var firstc = null; //첫번째 카드 클래스
+	var firstn = null; //첫번째 카드 네임
+	var secondc = null; //첫번째 카드 클래스
+	var secondn = null; //두번째 카드 네임
+	var game = '';
+	var count, interval, timeout;
+	var card = new Array(16);	// cardSet
+	var completeImg = new Array(0);
+	var cardImg = ["cat1", "cat2", "cat3", "cat4", "cat5", "cat6", "cat7",	"cat8"];	// cardSet
+	//first랑 second 만들어 놨으니 이것으로 첫번째 동작 두번째 동작 만들어야함.
+
+	
+	function timestart(){
+		timestop();
+      interval = setInterval(function(){
+          count--;
+      	$(".time").text(count);
+      }, 1000);
+      timeout = setTimeout(function(){
+   		$(".time").hide();
+   		$(".pause").hide();
+          clearInterval(interval);                    
+    		var html1 ="";
+     		html1 += "<div class=\"over\">GAME OVER</div>";
+     		game = 'over';
+     		$("body").hide().prepend(html1).fadeIn(2000); 
+      	$(".over").on("click", function() {
+   		$(".over").remove();
+		$(".start").show();
+  		});
+      }, count*1000);
+	}
+		
+	function timestop() {
+		clearTimeout(timeout);
+		clearInterval(interval);
+	}
+		
+	function flip() {
+		if(d) {
+		} else {
+			if (firstc == null) {
+				firstc = tempc; 
+				firstn = tempn;
+			} else if (secondc == null) {
+				if(firstn == tempn){
+				} else {
+					secondc = tempc;
+					secondn = tempn;
+				}
+			} // first 동작 end
+		}	
+	}
+	
+	function cardCheck() {
+		if (secondc != null) {
+			if (firstc == secondc) { //fisrt랑 second의 클래스명이 같아야함
+				// 그대로
+				completeImg.push(tempc);
+				console.log(completeImg);
+				firstc = null;
+				secondc = null;
+			} else {
+				//카드 초기상태 딜레이 주자
+				//다시 .card로 바꿔줌
+				var timeout = setTimeout(function(){
+					$("[name ='" + firstn + "' ]").attr("class", "hidecard");
+					$("[name ='" + secondn + "' ]").attr("class", "hidecard");
+				},150);
+				firstc = null;
+				secondc = null;
+			}
+		} // second 동작 end
+	}
+	
+	//name만 담아놓으면 됨
+	function cardOpen(pos) {
+		$(".pad [name='" + pos + "']").attr("class", cardImg[card[pos]]);
+	} // 카드 닫는것 만들어야함
+			
+	//로딩
+	$(document).ready(function() { 
+		$(".time").hide(); 	$(".pause").hide();
+		
+		$(".pad").on("click", "div > div", function() {
+			if(game != '') { 
+				return;
+			}
+			
+			cardOpen($(this).attr("name"));
+			tempc = $(this).attr("class");
+			tempn = $(this).attr("name");
+			d = false;
+			
+			if(completeImg.length != 0){
+				for(var k =0; k < completeImg.length; k++){
+					if(completeImg[k]==tempc){
+						d = true;
+					}
+				}
+			} // completeImg 두개이면 true , 중복 클릭시에 알림을 해주는 기능
+			
+			flip();
+			cardCheck();
+			
+			if(completeImg.length == 8) {
+				$(".time").hide();
+				$(".pause").hide();
+				var html1 ="";
+          		html1 += "<div class=\"com\">COMPLETE</div>";
+          		game='complete'
+          		$("body").hide().prepend(html1).fadeIn(2000); 
+           		$(".com").on("click", function() {
+              		$(".com").remove();
+        			$(".start").show();
+           		});
+           		timestop();
+			}
+			 // completeImg else end
+		});	
+
+		//스타트클릭
+		$(".start").on("click", function() { // .start start
+	        initGame();
+	        game = '';
+	        $(".time").text(count);
+			timestart();
+			$(".start").hide(); // start click [start]하이드
+			$(".time").show(); // start click [start]하이드
+			$(".pause").show();
+			
+			$(".pause").on("click",	function() { // 일시정지 버튼 
+				timestop();
+	            var html = "";                // 일시정지 창 생성
+	            html += "<div class=\"bg\"></div>";
+	            html += "<div class=\"popup\"><div class=\"re\"> 다시하기</div><div class=\"go\">이어하기</div></div>";
+	            $("body").prepend(html); // 일시정지 화면을 기본화면 위에 보여주기
+	            $(".re").on("click", function() { // 다시하기 
+	                clearInterval(interval);   
+	            	game = 'stop';
+	                $(".bg").remove();
+	                $(".popup").remove();
+	                $(".start").show();   
+					$(".time").hide();
+					$(".pause").hide();
+					/* history.go(0); */
+	            });
+	            $(".go").on("click", function() { // 이어하기 
+	                $(".bg").remove();
+	                $(".popup").remove();
+	                timestart();
+	            });
+			});
+		});
+		
+		function initGame() {
+			var imgCnt = [ 0, 0 ];
+			card.length = 0;
+			completeImg.length = 0;
+			for (var i = 0; i < 16; i++) {
+				console.log(imgCnt);
+				card[i] = Math.floor(Math.random() * 8);
+				var tmp1 = card[i];
+				var tmp2 = 0;
+				for (var j = 0; j < card.length; j++) {
+					if (card[j] == tmp1) {
+						tmp2++;
+					}
+					if (tmp2 > 2) {
+						i--;
+						break;
+					}
+				}
+				imgCnt[card[i]]++;
+			}
+		
+			tempc = null; tempn = null;
+			firstc = null; firstn = null;
+			secondc = null; secondn = null;
+			d = false;
+			count = 60;
+			interval, timeout = null;
+			
+			for(var i = 0; i < 16; i++) {
+				$("[name ='" + i + "' ]").attr("class", "hidecard");
+			}
+		}
+	});
+</script>
+</head>
+<body class="body">
+	<div class="frame">
+		<div class="time"></div>
+		<div class="space"></div>
+		<div class="pause">PAUSE</div>
+		<div class="pad">
+			<div class="1">
+				<div class="hidecard" name="0"></div>
+				<div class="hidecard" name="1"></div>
+				<div class="hidecard" name="2"></div>
+				<div class="hidecard" name="3"></div>
+				<div class="hidecard" name="4"></div>
+				<div class="hidecard" name="5"></div>
+				<div class="hidecard" name="6"></div>
+				<div class="hidecard" name="7"></div>
+			</div>
+			<div class="2">
+				<div class="hidecard" name="8"></div>
+				<div class="hidecard" name="9"></div>
+				<div class="hidecard" name="10"></div>
+				<div class="hidecard" name="11"></div>
+				<div class="hidecard" name="12"></div>
+				<div class="hidecard" name="13"></div>
+				<div class="hidecard" name="14"></div>
+				<div class="hidecard" name="15"></div>
+			</div>
+		</div>
+		<div class="start">START</div>
+	</div>
+</body>
+</html>

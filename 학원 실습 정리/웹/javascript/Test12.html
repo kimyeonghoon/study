@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#btn1").on("click", function() {
+		// parent() : 바로 위 부모 객체
+		$(".b1").parent().css("background-color", "orange");
+		// children(셀렉터) : 자식객체 중 셀렉터인 것
+		// .b1의 부모의 자식 중 .b2인 객체의 자식 중 .c2인 것
+		// 셀렉터가 없으면 모든 자식
+		$(".b1").parent().children(".b2").children(".c2").css("color", "white");
+		// 객체.each(함수) : 해당 객체 개수만큼 함수를 실행한다.
+		$("div").each(function() {
+			// each에서의 this : 각 반복 시 해당 순서의 객체
+			console.log($(this).attr("class"));
+		});
+	}); // #btn1 onclick end
+	
+	$("#wrap").on("click", "[name='a']", function() {
+		var cnt = 0;
+		$("#wrap [name='a']:checked").each(function() {
+			cnt++;
+		});
+		$("#txt").val(cnt);
+		// each는 반복적으로 뭔가를 할 때 씀.
+		// 객체.length : 객체의 개수를 취득
+		console.log($("#wrap [name='a']:checked").length)
+	}); // #wrap onclick end
+	
+}); // document ready end
+</script>
+</head>
+<body>
+<input type="button" id="btn1" value="버튼1" />
+<div class="a1">
+	<div class="b1">b1</div>
+	<div class="b2">
+		<div class="c1">c1</div>
+		<div class="c2">c2</div>
+	</div>
+</div>
+<input type="text" id="txt" value="0" />
+<div id="wrap">
+<input type="checkbox" name="a" value="1" />1
+<input type="checkbox" name="a" value="2" />2
+<input type="checkbox" name="a" value="3" />3
+
+</div>
+</body>
+</html>

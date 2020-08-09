@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.a, .b, .c {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	height: 150px;
+}
+
+.a {
+	background-color: #FF0000;
+}
+
+.b {
+	background-color: #EEEE00;
+	position: absolute;
+/* 	top: 50px;
+	left: 50px; */
+	/* margin-top, margin-left로 처리해도 되지만 calc 사용  */
+	top: calc(50% - 75px);
+	left: calc(50% - 75px);
+	z-index: 100;
+	/* 클릭이 필요할 경우 커서 포인터를 표시 */
+	cursor: pointer;
+}
+
+.c {
+	background-color: #AA00AA;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	z-index: 50;
+}
+
+</style>
+</head>
+<body>
+<div class="a">abc</div>
+<div class="b">가나다</div>
+<div class="c">123</div>
+</body>
+</html>

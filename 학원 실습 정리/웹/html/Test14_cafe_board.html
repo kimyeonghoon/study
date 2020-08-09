@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html, body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.contents_wrap {
+	width: 850px;
+}
+
+.search {
+	height: 30px;
+	text-align: right;
+}
+
+.subject {
+	font-weight: bold;
+	height: 50px;
+	font-size: 22px;
+}
+
+.list_wrap {
+	font-size: 13px;
+	height: 50px;	
+}
+
+.new_post, .tools {
+	display: inline-block;
+} 
+
+.new_post {
+	width: 60%;
+}
+.tools {
+	width: 39%;
+	text-align: right;
+}
+
+.board {
+		font-size: 11pt;
+		width: 100%;
+}
+table {
+	border-collapse: collapse;
+	
+}
+
+
+tr {
+	height: 40px;
+}
+
+thead > tr {
+	border-top: 2px solid #000000;
+	background-color: #FFFFFF;
+	font-size: 13px;
+}
+
+tbody > tr > .title:hover {
+	text-decoration:underline;
+}
+
+tbody {
+	font-size: 14px;
+}
+
+tbody > tr {
+	text-align: center;
+	border-bottom: 1px solid #F2F2F2;
+	cursor: pointer;
+}
+
+
+.noti_text_color {
+	color: black;
+	font-weight: normal;
+	cursor: default;
+}
+.title {
+	text-align: left;
+	text-indent: 10px;
+}
+
+tbody .notice {
+	color: #FF4E59;
+	font-weight: bold;
+	background-color: #F7F7F7;
+}
+
+tbody .noti {
+	font-size:9pt;
+	cursor: default;
+}
+
+.noti_bg {
+	width: 70%;
+	background-color: #FFE3E4;
+	border: 1px solid red;
+	text-align: center;
+	margin: 0px auto;
+}
+
+tbody .num {
+	font-size:9pt;
+	cursor: default;
+}
+
+.write {
+	text-align: right;
+	height: 50px;
+	padding-top: 10px;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+<div class="contents_wrap">
+	<div class="search">
+		<input type="text" /><input type="button" value="검색" /></div>
+	<div class="subject">해보세요 <img alt="즐겨찾기" src="./14_img/favorites.png" width="22px" height="22px" ></div>
+	<div class="list_wrap">
+		<div class="new_post">새글 구독 </div>
+		<div class="tools"><input type="checkbox" /> 공지 숨기기 | <img src="./14_img/icons.png" width="84px" height="20px">
+		<select>
+			<option class="list_count" value="5">5개씩</option>
+			<option class="list_count" value="10">10개씩</option>
+			<option class="list_count" value="15">15개씩</option>
+			<option class="list_count" value="20">20개씩</option>
+			<option class="list_count" value="30">30개씩</option>
+			<option class="list_count" value="40">40개씩</option>
+			<option class="list_count" value="50">50개씩</option>
+		</select>
+		</div>
+	</div>
+	<div class="board">
+		<table class="board">
+			<colgroup>
+			<col width="70px">
+			<col width="430px">
+			<col width="120px">
+			<col width="80px">
+			<col width="70px">
+			</colgroup>
+			<thead>
+				<tr>
+					<th></th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+					<th>조회</th>
+					<th>좋아요</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="notice">
+					<td class="noti"><div class="noti_bg">공지</div></td>
+					<td class="title">2020년 정보처리 1,2회차 필기시험 통합시행 안내</td>
+					<td class="noti_text_color">구디아카데미</td>
+					<td class="noti_text_color">2020.04.20.</td>
+					<td class="noti_text_color">122</td>
+					<td class="noti_text_color">3</td>
+				</tr>
+				<tr class="notice">
+					<td class="noti"><div class="noti_bg">공지</div></td>
+					<td class="title">정보처리 1회차 실기 신청하세요!!(20년 이전 필기 합격자만)</td>
+					<td class="noti_text_color">구디아카데미</td>
+					<td class="noti_text_color">2020.04.03.</td>
+					<td class="noti_text_color">69</td>
+					<td class="noti_text_color">0</td>
+				</tr>
+				<tr class="notice">
+					<td class="noti"><div class="noti_bg">공지</div></td>
+					<td class="title">코로나19 관련 운영 조치사항 [3]</td>
+					<td class="noti_text_color">구디아카데미</td>
+					<td class="noti_text_color">2020.03.09.</td>
+					<td class="noti_text_color">243</td>
+					<td class="noti_text_color">1</td>
+				</tr>
+				<tr class="notice">
+					<td class="noti"><div class="noti_bg">공지</div></td>
+					<td class="title">[공지] 코로나19 관련 예방사항 및 FAQ</td>
+					<td class="noti_text_color">구디아카데미</td>
+					<td class="noti_text_color">2020.02.26.</td>
+					<td class="noti_text_color">152</td>
+					<td class="noti_text_color">0</td>
+				</tr>
+				<tr>
+					<td class="num">13867</td>
+					<td class="title">DB 실습문제</td>
+					<td>자바김형구</td>
+					<td>2020.04.20.</td>
+					<td>25</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="num">13866</td>
+					<td class="title">DB 문제</td>
+					<td>자바 조한규</td>
+					<td>2020.04.20.</td>
+					<td>17</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="num">13864</td>
+					<td class="title">4.20 DB문제</td>
+					<td>자바가두현</td>
+					<td>2020.04.20.</td>
+					<td>19</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="num">13863</td>
+					<td class="title">4.20[1]</td>
+					<td>자바김상이</td>
+					<td>2020.04.20.</td>
+					<td>21</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td class="num">13862</td>
+					<td class="title">DB 문제[1]</td>
+					<td>자바 김경구</td>
+					<td>2020.04.20.</td>
+					<td>122</td>
+					<td>3</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="write"><img src="./14_img/write.png"></div>
+</div>
+</body>
+</html>

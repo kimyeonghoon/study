@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body {
+	margin: 0px;
+	font-size: 0
+}
+.a {
+	display: inline-block;
+	width: 1000px;
+	height: 1000px;
+	background-color: gray;
+}
+
+.wrap_member {
+	display: inline-block;
+	width: 400px;
+	vertical-align: top;
+	background-color: #DDDDDD;
+	position : absolute;
+	top: calc(50% - 250px);
+	left: 20px;
+	z-index: 100px;
+}
+
+.member, .contents, .confirm {
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+
+.member {
+	font-size: 16pt;
+	font-weight: bold;
+	
+}
+
+table {
+	font-size: 11pt;
+	width: 100%;
+	border-collapse: collapse;
+	
+}
+
+.q {
+	font-weight: bold;
+}
+
+
+.contents {
+	font-size: 11pt;
+}
+.confirm {
+	font-size: 11pt;
+}
+
+tr {
+	height: 30px;
+	
+}
+
+
+</style>
+
+</head>
+<body>
+<div class="a">페이지 전체</div>
+<div class="wrap_member">
+	<div class="member">회원가입</div>
+	<div class="con_wrap">
+	<table>
+		<colgroup>
+			<col width="40%" />
+			<col width="60%" />
+		</colgroup>
+		<tbody>
+			<tr>
+				<td class="q">회원ID</td>
+				<td><input type="text" maxlength="12"></td>
+			</tr>
+			<tr>
+				<td class="q">비밀번호</td>
+				<td><input type="password" maxlength="16"></td>
+			</tr>
+			<tr>
+				<td class="q">비밀번호 확인</td>
+				<td><input type="password" maxlength="16"></td>
+			</tr>
+			<tr>
+				<td class="q">이름</td>
+				<td><input type="text" maxlength="5"></td>
+			</tr>
+			<tr>
+				<td class="q">성별</td>
+				<td><input type="radio" name="SEL_A">남 <input type="radio" name="SEL_A">여</td>
+			</tr>
+			<tr>
+				<td class="q">이메일</td>
+				<td><input type="text" maxlength="12"></td>
+			</tr>
+			
+		</tbody>
+		
+	</table>
+	</div>
+	<div class="confirm"><input type="button" value="가입"> <input type="button" value="취소"></div>
+</div>
+
+
+</body>
+</html>

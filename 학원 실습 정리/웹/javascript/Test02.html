@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#box {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #000000;
+	background-color: rgb(0, 0, 0);
+}
+</style>
+<script type="text/javascript">
+	var r = 0;
+	var g = 0;
+	var b = 0;
+
+	function colorChange(color, type) {
+		if (type == 0) { // + 
+			switch (color) {
+			case "red":
+				if (r < 255) {
+					r += 5;
+				}
+				break;
+			case "green":
+				if (g < 255) {
+					g += 5;
+				}
+				break;
+			case "blue":
+				if (b < 255) {
+					b += 5;
+				}
+				break;
+			}
+		} else {
+			switch (color) {
+			case "red":
+				if (r > 0) {
+					r -= 5;
+				}
+				break;
+			case "green":
+				if (g > 0) {
+					g -= 5;
+				}
+				break;
+			case "blue":
+				if (b > 0) {
+					b -= 5;
+				}
+				break;
+			}
+		}
+		var box = document.getElementById("box");
+
+		box.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+		
+		/* 16진수 변환 */
+		var hr = r.toString(16);
+		var hg = g.toString(16);
+		var hb = b.toString(16);
+		
+		if(hr.length == 1) {
+			hr = "0" + hr;
+		}
+		if(hg.length == 1) {
+			hg = "0" + hg;
+		}
+		if(hb.length == 1) {
+			hb = "0" + hb;
+		}
+		
+		var c = document.getElementById("c");
+		
+		c.value = "#" + hr.toUpperCase() + hg.toUpperCase() + hb.toUpperCase();
+		// 16진수를 10진수로 변환
+		console.log(parseInt(hr, 16));
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="red+" onclick="colorChange('red', 0);" />
+	<input type="button" value="red-" onclick="colorChange('red', 1);" />
+	<input type="button" value="green+" onclick="colorChange('green', 0);" />
+	<input type="button" value="green-" onclick="colorChange('green', 1);" />
+	<input type="button" value="blue+" onclick="colorChange('blue', 0);" />
+	<input type="button" value="blue-" onclick="colorChange('blue', 1);" />
+	<br />
+	<div id="box"></div>
+	<br />
+	<input type="text" id="c" value="#000000" readonly="readonly" />
+</body>
+</html>

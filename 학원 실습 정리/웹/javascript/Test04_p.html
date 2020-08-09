@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.table {
+	background-color: #FFEA94;
+	text-align: center;
+	border: 1px solid #E8A87B;
+	box-shadow: 3px 3px 3px grey;
+}
+
+.display {
+	height: 30px;
+}
+
+.button {
+	background-color: #EEEEEE;
+	border: 1px soild #DDDDDD;
+	width: 40px;
+	height: 40px;
+}
+</style>
+<script type="text/javascript">
+var inputVal = null;
+var resultVal = null;
+var signVal = null;
+var preSign = null;
+
+function num(obj) {
+	var txt = document.getElementById("txt");
+	if(txt.value == 0){
+		txt.value = obj.value;
+	} else {
+		txt.value += obj.value;
+	}
+}
+
+function signButton(obj) {
+	var curr = document.getElementById("curr");
+	if (signVal == null) {
+		inputVal = txt.value;
+		resultVal = Number(inputVal);
+		curr.value = txt.value;
+		txt.value = 0;
+		signVal = obj.value;
+	} else {
+		result();
+		signVal = obj.value;
+		txt.value = 0;
+	}
+}
+
+
+function result() {
+	if(preSign != null) {
+		switch(preSign) {
+			case "+" : 
+				plusCal();
+				break;
+			case "-" : 
+				minusCal();
+				break;
+			case "*" : 
+				multipleCal();
+				break;
+			case "/" : 
+				divisionCal();
+				break;
+			default: alert("에러 발생!!!");
+		}
+	} else {
+		switch(signVal) {
+			case "+" : 
+				preSign = signVal;
+				plusCal();
+				break;
+			case "-" : 
+				preSign = signVal;
+				minusCal();
+				break;
+			case "*" : 
+				preSign = signVal;
+				multipleCal();
+				break;
+			case "/" : 
+				preSign = signVal;
+				divisionCal();
+				break;
+			default: alert("에러 발생!!!");
+		}
+	}
+}
+
+
+function clearCal() {
+	txt.value = null;
+	inputVal = null;
+	signVal = null;
+}
+
+function plusCal() {
+	inputVal = txt.value;
+	resultVal += Number(inputVal);
+	curr.value = resultVal;
+	txt.value = resultVal;
+	signVal = null;
+}
+
+function minusCal() {
+	inputVal = txt.value;
+	resultVal -= Number(inputVal);
+	curr.value = resultVal;
+	txt.value = resultVal;
+	signVal = null;
+}
+
+function multipleCal() {
+	inputVal = txt.value;
+	resultVal *= Number(inputVal);
+	curr.value = resultVal;
+	txt.value = resultVal;
+	signVal = null;
+}
+function divisionCal() {
+	inputVal = txt.value;
+	resultVal /= Number(inputVal);
+	curr.value = resultVal;
+	txt.value = resultVal;
+	signVal = null;
+}
+
+
+</script>
+</head>
+<body>
+<table class="table">
+	<tbody>
+	<tr>
+		<td colspan="4"><input type="text" class="display" id="curr" disabled="disabled" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td colspan="4"><input type="text" class="display" id="txt" readonly="readonly" /></td>
+	</tr>
+	<tr>
+		<td><input type="button" class="button" value="7" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="8" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="9" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="+" onclick="signButton(this)" /></td>
+	</tr>
+		<tr>
+		<td><input type="button" class="button" value="4" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="5" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="6" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="-" onclick="signButton(this)" /></td>
+	</tr>
+		<tr>
+		<td><input type="button" class="button" value="1" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="2" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="3" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="*" onclick="signButton(this)" /></td>
+	</tr>
+		<tr>
+		<td><input type="button" class="button" value="0" onclick="num(this)" /></td>
+		<td><input type="button" class="button" value="c" onclick="clearCal()" /></td>
+		<td><input type="button" class="button" value="=" onclick="result()" /></td>
+		<td><input type="button" class="button" value="/" onclick="signButton(this)" /></td>
+	</tr>
+</tbody>
+</table>
+</body>
+</html>

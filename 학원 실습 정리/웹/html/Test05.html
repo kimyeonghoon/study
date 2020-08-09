@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- head에 CSS를 넣는 것을 권장 -->
+<style type="text/css">
+/* SELECTOR(선택자) */
+/* 태그명 */
+div {
+	font-weight: bold;
+}
+/* class : . */
+.a {
+	background-color: #FF0000;
+}
+/* id : # */
+#a {
+	background-color: green;
+	
+}
+/* name : [속성='값'] */
+[name='a'] {
+	background-color: #0000FF;
+}
+/* selector selector */
+#a .b1 {
+	background-color: maroon;
+}
+/* selector > selector */
+#a > .b1 {
+	background-color: lime;
+}
+/* selector , selector : 복수의 셀렉터를 쓸 때 사용 */
+.a , [name='a'] {
+	font-style: italic;
+}
+/* selector를 공백없이 붙여서 사용하면 복수의 정보를 가진 셀렉터로 지정] */
+span[name='a'] {
+	color: #FFFFFF;
+}
+
+</style>
+</head>
+<body>
+<div class="a">1</div>
+<div id="a">2
+	<div class="b1">2-1
+		<div class="b1">2-1-1</div>
+	</div>
+		
+	<div class="b2">2-2</div>
+</div>
+<div name="a">3
+	<div class="b1">3-1</div>
+	<div class="b2">3-2</div>
+</div>
+<span name="a">A</span>
+
+</body>
+</html>

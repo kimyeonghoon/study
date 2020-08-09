@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test">
+	<select id="getList" parameterType="hashmap" resultType="hashmap">
+		SELECT S.SELL_ID, S.CUSTOMER, S.PRODUCT, S.PRICE, S.QUANTITY, S.SELL
+		FROM (SELECT SELL_ID, CUSTOMER, PRODUCT, PRICE, QUANTITY, SELL,
+      		  ROW_NUMBER() OVER(ORDER BY SELL_ID DESC, CUSTOMER ASC, PRODUCT ASC) AS RNUM
+		      FROM SELL
+		      WHERE 1 = 1
+			<if test="searchTxt != null and searchTxt != ''">
+				<choose>
+					<when test="searchGbn == 0">
+						AND SELL_ID LIKE '%' || #{searchTxt} || '%'
+					</when>
+					<when test="searchGbn == 1">
+						AND CUSTOMER LIKE '%' || #{searchTxt} || '%'
+					</when>
+					<when test="searchGbn == 2">
+						AND PRODUCT LIKE '%' || #{searchTxt} || '%'
+					</when>
+				</choose>
+			</if>
+			) S
+		WHERE S.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	<select id="getListCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*)
+		FROM SELL
+		WHERE 1 = 1
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn == 1">
+					AND CUSTOMER LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn == 2">
+					AND PRODUCT LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+	</select>
+	<insert id="insertTest" parameterType="hashmap">
+		INSERT INTO SELL(SELL_ID,CUSTOMER,PRODUCT,PRICE,QUANTITY,SELL)
+		VALUES(SELL_SEQ.NEXTVAL,#{customer},#{product},#{price},#{quantity},#{sell})
+	</insert>
+	<select id="getTest" parameterType="hashmap" resultType="hashmap">
+		SELECT SELL_ID, CUSTOMER, PRODUCT, PRICE, QUANTITY, SELL
+		FROM SELL
+		WHERE SELL_ID = #{sellId}
+	</select>
+	<update id="updateTest" parameterType="hashmap">
+		UPDATE SELL SET CUSTOMER=#{customer},PRODUCT=#{product},PRICE=#{price},QUANTITY=#{quantity},SELL=#{sell}
+		WHERE SELL_ID = #{sellId}
+	</update>
+	<delete id="deleteTest" parameterType="hashmap">
+		DELETE FROM SELL
+		WHERE SELL_ID = #{sellId}
+	</delete>
+	<insert id="insertJoin" parameterType="hashmap">
+		INSERT INTO BM(BM_NO, BM_ID, BM_PW, BM_NM)
+		VALUES(BM_SEQ.NEXTVAL, #{bmId}, #{bmPw}, #{bmNm})
+	</insert>
+	<select id="getBmIdCheck" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(BM_ID)
+		FROM BM
+		WHERE BM_ID = #{bmId}
+	</select>
+	<select id="getBm" parameterType="hashmap" resultType="hashmap">
+		SELECT BM_NO, BM_ID, BM_NM
+		FROM BM
+		WHERE BM_ID = #{bmId}
+		AND BM_PW = #{bmPw}
+	</select>
+	<insert id="bWrite" parameterType="hashmap">
+		INSERT INTO B(B_NO, BM_NO, B_TITLE, B_CON)
+		VALUES(B_SEQ.NEXTVAL, #{bmNo}, #{bTitle}, #{bCon})
+	</insert>
+	<select id="getBCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM B INNER JOIN BM M
+		               ON B.BM_NO = M.BM_NO
+		WHERE B.B_DEL = 1
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn == 0">
+					AND (
+						B.B_TITLE LIKE '%' || #{searchTxt} || '%'
+						OR M.BM_NM LIKE '%' || #{searchTxt} || '%'
+						OR REGEXP_REPLACE(B.B_CON, <![CDATA['<[^>]*>|\&([^;])*;']]>, '') LIKE '%' || #{searchTxt} || '%'
+					)
+				</when>
+				<when test="searchGbn == 1">
+					AND B.B_TITLE LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn == 2">
+					AND M.BM_NM LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn == 3">
+					AND REGEXP_REPLACE(B.B_CON, <![CDATA['<[^>]*>|\&([^;])*;']]>, '') LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+	</select>
+	<select id="getBList" parameterType="hashmap" resultType="hashmap">
+		SELECT B.B_NO, B.B_TITLE, B.BM_NM, B.B_DT, B.B_HIT
+		FROM (SELECT B.B_NO, B.B_TITLE, M.BM_NM, TO_CHAR(B.B_DT, 'YYYY-MM-DD') AS B_DT, B.B_HIT, ROW_NUMBER() OVER(ORDER BY B.B_NO DESC) AS RNUM
+		      FROM B INNER JOIN BM M
+		                     ON B.BM_NO = M.BM_NO
+		      WHERE B.B_DEL = 1
+		<if test="searchTxt != null and searchTxt != ''">
+			<choose>
+				<when test="searchGbn == 0">
+					AND (
+						B.B_TITLE LIKE '%' || #{searchTxt} || '%'
+						OR M.BM_NM LIKE '%' || #{searchTxt} || '%'
+						OR REGEXP_REPLACE(B.B_CON, <![CDATA['<[^>]*>|\&([^;])*;']]>, '') LIKE '%' || #{searchTxt} || '%'
+					)
+				</when>
+				<when test="searchGbn == 1">
+					AND B.B_TITLE LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn == 2">
+					AND M.BM_NM LIKE '%' || #{searchTxt} || '%'
+				</when>
+				<when test="searchGbn == 3">
+					AND REGEXP_REPLACE(B.B_CON, <![CDATA['<[^>]*>|\&([^;])*;']]>, '') LIKE '%' || #{searchTxt} || '%'
+				</when>
+			</choose>
+		</if>
+			) B
+		WHERE B.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	<select id="getB" parameterType="hashmap" resultType="hashmap">
+		SELECT B.B_NO, B.B_TITLE, B.BM_NO, M.BM_NM, B.B_CON, TO_CHAR(B.B_DT, 'YYYY-MM-DD') AS B_DT, B.B_HIT
+		FROM B B INNER JOIN BM M
+		                 ON B.BM_NO = M.BM_NO
+		WHERE B.B_NO = #{bNo}
+	</select>
+	<update id="updateBHit" parameterType="hashmap">
+		UPDATE B SET B_HIT = B_HIT + 1
+		WHERE B.B_NO = #{bNo}
+	</update>
+	<update id="bDelete" parameterType="hashmap">
+		UPDATE B SET B_DEL = 0
+		WHERE B.B_NO = #{bNo}
+		AND BM_NO = #{bmNo}
+	</update>
+	<update id="bUpdate" parameterType="hashmap">
+		UPDATE B SET B_TITLE = #{bTitle}, B_CON = #{bCon}
+		WHERE B.B_NO = #{bNo}
+		AND BM_NO = #{bmNo}
+	</update>
+	
+	<select id="getOBCnt" parameterType="hashmap" resultType="Integer">
+		SELECT COUNT(*) AS CNT
+		FROM OB O INNER JOIN BM M
+                		  ON O.BM_NO = M.BM_NO
+		WHERE O.DEL_YN = 1
+	</select>
+	
+	<select id="getOBList" parameterType="hashmap" resultType="hashmap">
+		SELECT NO, BM_NM, CON, DT, BM_NO, BM_ID
+		FROM(SELECT ROW_NUMBER() OVER(ORDER BY O.NO DESC) AS RNUM, M.BM_ID, O.NO, M.BM_NM, M.BM_NO, O.CON, TO_CHAR(O.DT, 'MM-DD HH24:MI') AS DT
+		     FROM OB O INNER JOIN BM M
+		                       ON O.BM_NO = M.BM_NO
+		     WHERE O.DEL_YN = 1) O
+		WHERE O.RNUM BETWEEN #{startCnt} AND #{endCnt}
+	</select>
+	
+	<update id="oBDelete" parameterType="hashmap">
+		UPDATE OB SET DEL_YN = 0
+		WHERE NO = #{bNo}
+		AND BM_NO = #{bmNo}
+	</update>
+	
+	<insert id="oBWrite" parameterType="hashmap">
+		INSERT INTO OB(NO, CON, BM_NO)
+		VALUES (OB_SEQ.NEXTVAL, #{oBCon}, #{bmNo})
+	</insert>	
+	
+	<select id="oBCon" parameterType="hashmap" resultType="hashmap">
+		SELECT CON
+		FROM OB
+		WHERE NO = #{bNo}
+	</select>
+	
+	<update id="oBUpdate" parameterType="hashmap">
+		UPDATE OB SET CON = #{oBCon}
+		WHERE NO = #{bNo}
+		AND BM_NO = #{bmNo}
+	</update>
+	
+</mapper>

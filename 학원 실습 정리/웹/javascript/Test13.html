@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+var cnt = 1;
+
+$(document).ready(function() {
+	$("#btn1").on("click", function() {
+		var html =  "";
+		
+		cnt++;
+		
+		html = "<div>" + cnt + "<input type=\"button\" value=\"삭제\" /></div>";
+		
+		// 객체.append(값) : 엔티티 뒤에 값을 붙여준다
+		$(".wrap").append(html);
+	});
+	
+	$("#btn2").on("click", function() {
+		var html =  "";
+		
+		cnt++;
+		
+		html = "<div>" + cnt + "<input type=\"button\" value=\"삭제\" /></div>";
+		
+		// 객체.prepend(값) : 엔티티 앞에 값을 붙여준다
+		$(".wrap").prepend(html);
+	});
+	
+	$(".wrap").on("click", "input[type='button']", function() {
+		// 객체.remove() : 해당 객체를 삭제 
+		$(this).parent().remove();
+	});
+	
+	
+	$("#btn3").on("click", function() {
+		cnt = 0;
+		// 객체.empty() : 해당 객체의 엔티티를 제거
+		$(".wrap").empty();
+	});
+	
+	$("#btn4").on("click", function() {
+		alert("천지창조");
+		// 객체.html() : 객체의 엔티티를 문자열로 취득
+		//console.log($("body").html());
+		// 객체.html(값) : 객체의 엔티티를 값으로 변환
+		// 이벤트 할당된 객체가 사라지면 해당 이벤트는 동작하지 않는다.
+		$("body").html($("body").html());
+		
+		// 기존 이벤트 제거
+		$("#btn1").off("click");
+		$("#btn2").off("click");
+		$("#btn3").off("click");
+		$("#btn4").off("click");
+		
+		// 이벤트 신규 할당
+		$("#btn1").on("click", function() {
+			var html =  "";
+			
+			cnt++;
+			
+			html = "<div>" + cnt + "<input type=\"button\" value=\"삭제\" /></div>";
+			
+			// 객체.append(값) : 엔티티 뒤에 값을 붙여준다
+			$(".wrap").append(html);
+		});
+		
+	});
+	
+	$("#btn").on("click", function() {
+		// $.trim() : 앞뒤의 공백을 제거한 문자열을 돌려준다.
+		console.log("[" + $.trim($("#txt").val()) + "]");
+	});
+	
+	
+}); 
+	/* 
+	on을 통하여 이벤트 할당 시 
+	해당 이벤트 주체가 화면에 존재하여야 한다.
+	(그래서 버튼이 아닌 wrap에 걸음 - 상시 떠 있기 때문
+	html을 갈아 엎었을 때는 새로운 html에 이벤트를 할당해야함)
+	*/
+</script>
+</head>
+<body>
+<input type="button" value="뒤에추가" id="btn1" />
+<input type="button" value="앞에추가" id="btn2" />
+<input type="button" value="비우기" id="btn3" />
+<input type="button" value="버튼4" id="btn4" />
+<div class="wrap">
+	<div>1<input type="button" value="삭제" /></div>
+</div>
+<input type="text" id="txt" /><input type="button" value="버튼" id="btn" />
+</body>
+</html>

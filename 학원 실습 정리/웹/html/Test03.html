@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- hidden : 유저에게 보이지 않음. 일종의 변수 역할. -->
+<input type="hidden" value="123" />
+
+<!-- 앵커 : 링크, 한 번에 하나만 걸 수 있음 -->
+<a href="https://www.google.com" target="_blank">Google</a>
+
+<!-- Lists - 목록 지정 태그들. css로 변환해서 써야 하므로 개발자는 잘 안씀. -->
+<!-- ul(순서가 없는 목록), li -->
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+<!-- ol(순서가 있는 목록), li -->
+<ol>
+  <li>Chapter 1. HTML</li>
+  <li>Chapter 2. CSS</li>
+  <li>Chapter 3. JAVASCRIPT</li>
+</ol>
+
+<!-- dl, dt(주제), dd(설명) : 잘 안씀 -->
+<dl>
+  <dt>HTML</dt>
+    <dd>- Hyper Text Mark-up Language</dd>
+  <dt>CSS</dt>
+    <dd>- Cascading Style Sheet</dd>
+</dl>
+
+
+<!-- 테이블 - table로 선언. 머리(thead) - 가운데 정렬; 볼드 기본적으로 들어가 있음 , 바디(tbody), 발(tfoot)로 구성 -->
+<!-- 가로 사이즈 정의 - colgroup, 세로 사이즈 정의 - tr
+<table border="1" cellspacing="0">
+	<colgroup>
+		<col width="100px" />
+		<col width="200px" />
+		<col width="300px" />
+	</colgroup>
+	<thead>
+		<!-- tr : row  -->
+		<tr>
+			<!-- th : 헤더 1칸  -->
+			<!-- &nbsp; -->
+			<th>H&nbsp;1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		</thead>
+	<tbody>
+		<tr height="50px">
+			<!-- td : 일반1칸, 최대 가로 개수보다 작을 경우 해당 영역을 비움 -->
+			<!-- rowspan 세로 병합 -->
+			<td>1-1</td>
+			<td>1-2</td>
+			<td>1-3</td>
+		</tr>
+		<tr height="100px">
+			<!-- colspan 가로 병합 -->
+			<td>1-1</td>
+			<td>2-2</td>
+		</tr>
+	</tbody>
+	<!-- tfoot을 잘 쓰지는 않음. 페이징 용도로 쓸 수는 있음 -->
+	<tfoot>
+	
+	</tfoot>
+</table>
+
+
+
+</body>
+</html>

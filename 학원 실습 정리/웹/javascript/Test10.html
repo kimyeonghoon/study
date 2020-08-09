@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 공통적으로 쓰는 것. 특정 파일에서만 쓸 경우 내용관리가 필요하다면 분리 -->
+<!-- 외부 CSS 파일 이용시 링크태그 이용 -->
+<link rel="stylesheet" type="text/css" href="./css/Test10.css" />
+<!-- 외부 js 파일 이용시 src를 이용하여 위치 지정 -->
+<!-- 스크립트에서 src가 선언되면 해당 Entity를 해당 파일의 내용으로 채우겠다는 의미.
+	 *어떤 Entity가 들어와 있어도 파일의 내용으로 교체(덮어씀). 별도의 스크립트를 이용하고 싶다면
+	 스크립트를 추가하면 됨-->
+<script type="text/javascript" src="./js/Test10.js"></script>
+<script type="text/javascript">
+alert("a");
+</script>
+</head>
+<body>
+<input type="button" value="back" onclick="goBack();" />
+<input type="button" value="?" onclick="a();" />
+<br />
+<div id="box"></div>
+</body>
+</html>
