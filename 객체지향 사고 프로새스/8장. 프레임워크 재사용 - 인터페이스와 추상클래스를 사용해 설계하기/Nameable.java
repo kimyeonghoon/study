@@ -1,8 +1,9 @@
+package shop;
 
 public interface Nameable {
 
-	public String getName();
+	public abstract String getName();
 	
-	public void setName(String aName);
+	public abstract void setName(String name);
 	
 }
