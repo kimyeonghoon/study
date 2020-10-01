@@ -1,14 +1,25 @@
 package kim.yeonghoon.study.springboot.hellospring;
 
 import kim.yeonghoon.study.springboot.hellospring.domain.Member;
+import kim.yeonghoon.study.springboot.hellospring.repository.JdbcMemberRepository;
 import kim.yeonghoon.study.springboot.hellospring.repository.MemberRepository;
 import kim.yeonghoon.study.springboot.hellospring.repository.MemoryMemberRepository;
 import kim.yeonghoon.study.springboot.hellospring.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.sql.DataSource;
+
 @Configuration
 public class SpringConfig {
+
+    private DataSource dataSource;
+
+    @Autowired
+    public SpringConfig(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Bean
     public MemberService memberService() {
@@ -17,7 +28,8 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new MemoryMemberRepository();
+        //return new MemoryMemberRepository();
+        return new JdbcMemberRepository(dataSource);
     }
 
 }
